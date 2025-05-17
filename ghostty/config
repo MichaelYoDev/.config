@@ -1,0 +1,24 @@
+#!/bin/bash
+
+theme = light:rose-pine-dawn,dark:rose-pine
+background = 1f1d2e
+background-blur = true
+background-opacity = 0.80
+
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+
+selection-invert-fg-bg = true
+cursor-invert-fg-bg = true
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = true
+shell-integration-features = no-cursor
+
+macos-window-shadow = false
+macos-icon = holographic
+macos-titlebar-style = hidden
+
+window-padding-y = 2,0
+
+quit-after-last-window-closed = true
