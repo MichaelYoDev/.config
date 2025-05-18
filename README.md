@@ -1,6 +1,6 @@
 # MichaelYoDev's Dotfiles
 ## Currently using:
-Terminal: Ghostty
+Terminal: Kitty
 
 Editor: Neovim
 

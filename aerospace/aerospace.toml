@@ -25,7 +25,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     outer.right = 8
 
 [mode.main.binding]
-    alt-enter = 'exec-and-forget osascript -e "tell application \"Ghostty\" to activate"'
+    alt-enter = 'exec-and-forget osascript -e "tell application \"Kitty\" to activate"'
 
     ctrl-alt-shift-r = 'reload-config'
 

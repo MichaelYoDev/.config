@@ -37,14 +37,29 @@ return {
         fmta([[
         Michael Oliveira
 
+        Teacher McTeacherson
+
+        Class McClasson
+
         #let today = datetime.today()
-        #today.display()
+        #today.display(
+            "[year repr:full] [month repr:short] [day]"
+        )
 
         <>
         ]], { i(1) })
     ),
 
-    s({trig = "ltr" },
-        fmt("#set page(\"us-letter\")", {})
+    s({ trig = "ltr" },
+        fmta([[
+        #set page(
+            "us-letter",
+            margin: (x: 1in, y: 1in),
+        )
+
+        #set text(size: 12pt)
+
+        <>
+        ]], { i(1) })
     ),
 }
