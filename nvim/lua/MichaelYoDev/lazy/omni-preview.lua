@@ -9,7 +9,6 @@ return {
 
         -- Markdown
         { "toppair/peek.nvim", lazy = true, build = "deno task --quiet build:fast" },
-        { "OXY2DEV/markview.nvim", lazy = true},
 
     },
     opts = {},

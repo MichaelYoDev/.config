@@ -1,14 +1,19 @@
 return { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
+        -- better coments
+        require('mini.comment').setup()
+
         -- Better Around/Inside textobjects
         require('mini.ai').setup { n_lines = 500 }
 
         -- Add/delete/replace surroundings (brackets, quotes, etc.)
         require('mini.surround').setup()
 
+        -- Pair stuff like parenthesis
         require('mini.pairs').setup()
 
+        -- Shows the scope of where you are typing
         require('mini.indentscope').setup({
                 symbol = "▏",
                 -- symbol = "│",

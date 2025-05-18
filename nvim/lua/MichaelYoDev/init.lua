@@ -2,7 +2,6 @@ require("MichaelYoDev.set")
 require("MichaelYoDev.remap")
 require("MichaelYoDev.lazy_init")
 require("MichaelYoDev.typst")
-require("MichaelYoDev.video")
 
 local augroup = vim.api.nvim_create_augroup
 local MichaelYoDevGroup= augroup('MichaelYoDev', {})
