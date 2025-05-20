@@ -43,7 +43,7 @@ return {
 
         #let today = datetime.today()
         #today.display(
-            "[year repr:full] [month repr:short] [day]"
+          "[year repr:full] [month repr:short] [day]"
         )
 
         <>
@@ -53,8 +53,8 @@ return {
     s({ trig = "ltr" },
         fmta([[
         #set page(
-            "us-letter",
-            margin: (x: 1in, y: 1in),
+          "us-letter",
+          margin: (x: 1in, y: 1in),
         )
 
         #set text(size: 12pt)
