@@ -39,12 +39,20 @@ return {
 
         Teacher McTeacherson
 
-        Class McClasson
+        Class 123
 
         #let today = datetime.today()
         #today.display(
           "[year repr:full] [month repr:short] [day]"
         )
+
+        #align(center)[
+          Lorem
+        ]
+
+        #par(first-line-indent: 3em)[
+          Nulla id nostrud in ullamco magna dolor laboris. Id ipsum ut Lorem fugiat est minim aliquip voluptate duis cillum pariatur. Anim dolor nulla exercitation sint excepteur proident labore dolor.
+        ]
 
         <>
         ]], { i(1) })

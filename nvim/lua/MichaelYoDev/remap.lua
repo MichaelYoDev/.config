@@ -64,6 +64,7 @@ vim.keymap.set(
 
 -- LMAOOOOOO
 vim.keymap.set("n", "<leader>rain", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>life", "<cmd>CellularAutomaton game_of_life<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")

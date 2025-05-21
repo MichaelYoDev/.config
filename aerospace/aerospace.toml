@@ -8,7 +8,7 @@ exec-on-workspace-change = [
 ]
 
 after-startup-command = [
-    'exec-and-forget borders style=round active_color="glow(0xffebbcba)" inactive_color=0xff6e6a86 width=5.0 hidpi=off order=a'
+    'exec-and-forget borders style=round active_color="gradient(top_left=0xff9ccfd8,bottom_right=0xffebbcba)" inactive_color=0xff6e6a86 width=5.0 hidpi=off order=a'
 ]
 
 enable-normalization-flatten-containers = true
@@ -17,12 +17,12 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [gaps]
-    inner.horizontal = 8
-    inner.vertical = 8
-    outer.left = 8
-    outer.bottom = 8
-    outer.top = [{ monitor.'built-in' = 16 }, 48]
-    outer.right = 8
+    inner.horizontal = 9
+    inner.vertical = 9
+    outer.left = 7
+    outer.bottom = 7
+    outer.top = [{ monitor.'built-in' = 15 }, 48]
+    outer.right = 7
 
 [mode.main.binding]
     alt-enter = 'exec-and-forget osascript -e "tell application \"Kitty\" to activate"'
@@ -40,7 +40,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     alt-shift-k = 'move up'
     alt-shift-l = 'move right'
 
-    alt-f = 'fullscreen'
+    alt-slash = 'layout tiles horizontal vertical'
+    alt-comma = 'layout accordion horizontal vertical'
 
     alt-shift-e = 'balance-sizes'
 

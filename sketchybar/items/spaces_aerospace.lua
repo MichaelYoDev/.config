@@ -1,6 +1,6 @@
 local colors = require("colors")
 
-function Parse_string_to_table(s)
+function parse_string_to_table(s)
   local result = {}
   for line in s:gmatch("([^\n]+)") do
     table.insert(result, line)
@@ -12,7 +12,7 @@ local file = io.popen("aerospace list-workspaces --all")
 local result = file:read("*a")
 file:close()
 
-local workspaces = Parse_string_to_table(result)
+local workspaces = parse_string_to_table(result)
 
 -- Create an array to store space item names for the bracket
 local space_names = {}
@@ -24,8 +24,8 @@ for i, workspace in ipairs(workspaces) do
       highlight_color = colors.red,
     },
     label = { drawing = false },
-    padding_left = (i == 1) and 8 or 1,    -- Increased padding for the first item
-    padding_right = (i == #workspaces) and 8 or 1, -- Increased padding for the last item
+    padding_left = (i == 1) and 8 or 2,    -- Increased padding for the first item
+    padding_right = (i == #workspaces) and 8 or 2, -- Increased padding for the last item
   })
 
   -- Store the space item name
@@ -35,6 +35,7 @@ for i, workspace in ipairs(workspaces) do
     local selected = env.FOCUSED_WORKSPACE == workspace
     space:set({
       icon = {
+        -- string = selected and "●" or "◯", -- Set ● for selected, ○ for unselected
         highlight = selected
       },
       label = { highlight = selected },

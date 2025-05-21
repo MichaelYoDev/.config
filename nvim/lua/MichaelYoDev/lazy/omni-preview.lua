@@ -13,7 +13,7 @@ return {
             event = { "VeryLazy" },
             build = "deno task --quiet build:fast",
         },
-        { "OXY2DEV/markview.nvim", lazy = false },
+        -- { "OXY2DEV/markview.nvim", lazy = false },
 
     },
     opts = {},
