@@ -1,6 +1,6 @@
 local colors = require("colors")
 
-function parse_string_to_table(s)
+function Parse_string_to_table(s)
   local result = {}
   for line in s:gmatch("([^\n]+)") do
     table.insert(result, line)
@@ -12,7 +12,7 @@ local file = io.popen("aerospace list-workspaces --all")
 local result = file:read("*a")
 file:close()
 
-local workspaces = parse_string_to_table(result)
+local workspaces = Parse_string_to_table(result)
 
 -- Create an array to store space item names for the bracket
 local space_names = {}
