@@ -155,6 +155,5 @@ return {
                 vim.keymap.set("n", "<leader>lp", function() vim.diagnostic.goto_prev() end, opts)
             end
         })
-
     end
 }
