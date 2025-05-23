@@ -23,18 +23,18 @@ return { -- Collection of various small independent plugins/modules
         })
         require('mini.indentscope').gen_animation.none()
 
-        -- Start page stuff
-        local logo = {
-            [[███╗   ██╗██╗   ██╗██╗███╗   ███╗]],
-            [[████╗  ██║██║   ██║██║████╗ ████║]],
-            [[██╔██╗ ██║██║   ██║██║██╔████╔██║]],
-            [[██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
-            [[██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║]],
-            [[╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝]],
-        }
-        local system_info = {
-            'Neovim v' .. vim.version().major .. '.' .. vim.version().minor .. '.' .. vim.version().patch,
-        }
+        -- -- Start page stuff
+        -- local logo = {
+        --     [[███╗   ██╗██╗   ██╗██╗███╗   ███╗]],
+        --     [[████╗  ██║██║   ██║██║████╗ ████║]],
+        --     [[██╔██╗ ██║██║   ██║██║██╔████╔██║]],
+        --     [[██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
+        --     [[██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+        --     [[╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+        -- }
+        -- local system_info = {
+        --     'Neovim v' .. vim.version().major .. '.' .. vim.version().minor .. '.' .. vim.version().patch,
+        -- }
         -- require('mini.starter').setup({
         --     header = table.concat(vim.list_extend(logo, system_info), '\n'),
         -- })

@@ -1,6 +1,6 @@
 require("items.apple")
 require("items.menus")
-require("items.spaces_aerospace")
+require("items.spaces_yabai_simple")
 require("items.front_app")
 require("items.calendar")
 require("items.widgets")

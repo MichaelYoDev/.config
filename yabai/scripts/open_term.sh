@@ -15,4 +15,4 @@
 #   }
 # fi
 
-osascript -e "tell application \"Ghostty\" to activate"
+osascript -e "tell application \"Kitty\" to activate"

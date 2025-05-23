@@ -4,8 +4,10 @@ Terminal: Kitty
 
 Editor: Neovim
 
-WM: Aerospace
+WM: Yabai
 
 Bar: Sketchybar
+
+Borders: JankyBorders
 
 Browser: Zen Browser

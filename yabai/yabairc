@@ -7,11 +7,11 @@ set -x
 declare -A gaps
 declare -A color
 
-gaps["top"]="8"
-gaps["bottom"]="8"
-gaps["left"]="8"
-gaps["right"]="8"
-gaps["inner"]="10"
+gaps["top"]="6"
+gaps["bottom"]="6"
+gaps["left"]="6"
+gaps["right"]="6"
+gaps["inner"]="8"
 
 color["focused"]="0xE0808080"
 color["normal"]="0x00010101"
@@ -45,7 +45,7 @@ yabai -m config window_opacity off
 yabai -m config window_shadow float
 
 yabai -m config window_border on
-yabai -m config window_border_width 2
+#yabai -m config window_border_width 2
 #yabai -m config active_window_border_color "${color["focused"]}"
 #yabai -m config normal_window_border_color "${color["normal"]}"
 #yabai -m config insert_feedback_color "${color["preselect"]}"
@@ -88,7 +88,7 @@ yabai -m signal --add event=window_title_changed action="${ubersicht_spaces_refr
 
 # borders style=round active_color="gradient(top_left=0xffebbcba,bottom_right=0xff31748f)" inactive_color=0xff6e6a86 width=6.0 hidpi=off order=a &
 
-borders style=round active_color="glow(0xffebbcba)" inactive_color=0xff6e6a86 width=6.0 hidpi=off order=a &
+borders style=round active_color="gradient(top_left=0xff9ccfd8,bottom_right=0xffebbcba)" inactive_color=0xff6e6a86 width=4.0 hidpi=off order=a &
 
 set +x
 printf "yabai: configuration loaded...\\n"
