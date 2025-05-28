@@ -1,6 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
+        { "mason-org/mason.nvim",           version = "^1.0.0" },
+        { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
@@ -61,6 +63,7 @@ return {
                         capabilities = capabilities,
                         settings = {
                             formatterMode = "typstyle",
+                            formatterIndentSize = 4,
                             exportPdf = "never"
                         },
                     }

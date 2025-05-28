@@ -2,12 +2,10 @@
 ## Currently using:
 Terminal: Kitty
 
-Editor: Neovim
+Editor: Neovim (btw)
 
-WM: Yabai
+WM: Yabai + JankyBorders
 
 Bar: Sketchybar
-
-Borders: JankyBorders
 
 Browser: Zen Browser

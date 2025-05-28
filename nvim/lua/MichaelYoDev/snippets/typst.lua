@@ -43,15 +43,15 @@ return {
 
         #let today = datetime.today()
         #today.display(
-          "[year repr:full] [month repr:short] [day]"
+            "[year repr:full] [month repr:short] [day]"
         )
 
         #align(center)[
-          Lorem
+            Lorem
         ]
 
         #par(first-line-indent: 3em)[
-          Nulla id nostrud in ullamco magna dolor laboris. Id ipsum ut Lorem fugiat est minim aliquip voluptate duis cillum pariatur. Anim dolor nulla exercitation sint excepteur proident labore dolor.
+            Nulla id nostrud in ullamco magna dolor laboris. Id ipsum ut Lorem fugiat est minim aliquip voluptate duis cillum pariatur. Anim dolor nulla exercitation sint excepteur proident labore dolor.
         ]
 
         <>
@@ -61,13 +61,30 @@ return {
     s({ trig = "ltr" },
         fmta([[
         #set page(
-          "us-letter",
-          margin: (x: 1in, y: 1in),
+            "us-letter",
+            margin: auto,
         )
 
-        #set text(size: 12pt)
+        #set text(
+            size: 12pt,
+            font: "Times Newer Roman"
+            top-edge: 1em,
+            bottom-edge: -0.2em
+        )
+
+        #set par(
+            leading: 1em
+        )
 
         <>
+        ]], { i(1) })
+    ),
+
+    s({ trig = "par" },
+        fmta([[
+        #par(first-line-indent: 3em)[
+            <>
+        ]
         ]], { i(1) })
     ),
 }
