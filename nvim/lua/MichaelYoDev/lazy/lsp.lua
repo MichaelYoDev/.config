@@ -3,8 +3,8 @@ return {
     dependencies = {
         { "mason-org/mason.nvim",           version = "^1.0.0" },
         { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
+        -- "williamboman/mason.nvim",
+        -- "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -17,7 +17,6 @@ return {
         vim.diagnostic.config({
             float = { border = "rounded" }
         })
-
 
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")

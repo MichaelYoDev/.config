@@ -2,9 +2,10 @@ vim.g.have_nerd_font = false
 
 vim.g.mapleader = " "
 
--- These aren't needed when using oi.nvim
+-- These aren't needed when using oil.nvim
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- vim.keymap.set("n", "<leader>pv", "<cmd>Explore<CR>")
+-- This keymap is instead set in oil.lua
 
 
 vim.keymap.set("n", "<leader>ep", "<cmd>ExportPicker<CR>")
@@ -32,7 +33,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.config/scripts/tmux-sessionizer.sh<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

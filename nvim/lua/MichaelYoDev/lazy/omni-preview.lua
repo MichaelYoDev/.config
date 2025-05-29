@@ -2,16 +2,10 @@ return {
     "sylvanfranklin/omni-preview.nvim",
     dependencies = {
         -- Typst
-        {
-            "chomosuke/typst-preview.nvim",
-            -- opts = {
-            --     open_cmd = "zathura %s",
-            -- },
-            lazy = true
-        },
+        { "chomosuke/typst-preview.nvim", lazy = true },
 
         -- CSV
-        { "hat0uma/csvview.nvim", lazy = true },
+        { "hat0uma/csvview.nvim",         lazy = true },
 
         -- Markdown
         {
@@ -19,7 +13,6 @@ return {
             event = { "VeryLazy" },
             build = "deno task --quiet build:fast",
         },
-        -- { "OXY2DEV/markview.nvim", lazy = false },
 
     },
     opts = {},

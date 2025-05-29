@@ -17,9 +17,7 @@ return {
                 },
             }
             require("zen-mode").toggle()
-            ColorMyPencils()
         end)
-
 
         vim.keymap.set("n", "<leader>zZ", function()
             require("zen-mode").setup {
@@ -37,7 +35,6 @@ return {
                 },
             }
             require("zen-mode").toggle()
-            ColorMyPencils()
         end)
     end
 }

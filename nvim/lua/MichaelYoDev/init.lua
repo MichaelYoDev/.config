@@ -4,7 +4,7 @@ require("MichaelYoDev.lazy_init")
 require("MichaelYoDev.typst")
 
 local augroup = vim.api.nvim_create_augroup
-local MichaelYoDevGroup= augroup('MichaelYoDev', {})
+local MichaelYoDevGroup = augroup('MichaelYoDev', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -30,7 +30,7 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = MichaelYoDevGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
@@ -39,7 +39,7 @@ autocmd({"BufWritePre"}, {
 autocmd('BufEnter', {
     group = MichaelYoDevGroup,
     callback = function()
-        vim.cmd.colorscheme("rose-pine")
+        vim.cmd("colorscheme rose-pine")
     end
 })
 
