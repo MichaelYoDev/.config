@@ -31,10 +31,10 @@ return {
             automatic_installation = false,
             ensure_installed = {
                 "lua_ls",
-                "rust_analyzer",
+                -- "rust_analyzer",
                 "pylsp",
-                "jdtls",
-                "gopls",
+                -- "jdtls",
+                -- "gopls",
                 "tinymist",
             },
             handlers = {

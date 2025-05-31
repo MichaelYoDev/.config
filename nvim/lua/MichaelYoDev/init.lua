@@ -13,11 +13,11 @@ function R(name)
     require("plenary.reload").reload_module(name)
 end
 
-vim.filetype.add({
-    extension = {
-        templ = 'templ',
-    }
-})
+-- vim.filetype.add({
+--     extension = {
+--         templ = 'templ',
+--     }
+-- })
 
 autocmd('TextYankPost', {
     group = yank_group,
@@ -34,13 +34,6 @@ autocmd({ "BufWritePre" }, {
     group = MichaelYoDevGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
-})
-
-autocmd('BufEnter', {
-    group = MichaelYoDevGroup,
-    callback = function()
-        vim.cmd("colorscheme rose-pine")
-    end
 })
 
 vim.g.netrw_browse_split = 0

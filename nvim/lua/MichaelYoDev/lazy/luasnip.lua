@@ -7,8 +7,6 @@ return {
 
         local ls = require("luasnip")
         vim.keymap.set({ "i" }, "<C-e>", function() ls.expand() end, { silent = true })
-        vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(1) end, { silent = true })
-        vim.keymap.set({ "i", "s" }, "<C-K>", function() ls.jump(-1) end, { silent = true })
 
         ls.config.setup({
             enable_autosnippets = true,
