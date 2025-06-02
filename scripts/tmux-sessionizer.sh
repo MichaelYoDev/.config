@@ -3,7 +3,8 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/ ~/.config ~/Desktop/code -mindepth 1 -maxdepth 1 -type d | \
+    selected=$(
+        find ~/.config ~/Desktop/code -mindepth 0 -maxdepth 1 -type d | \
         sed "s|^$HOME/||" | \
         fzf --no-color
     )
@@ -34,4 +35,4 @@ if [[ -z $TMUX ]]; then
     tmux attach -t $selected_name
 else
     tmux switch-client -t $selected_name
-fi1
+fi
