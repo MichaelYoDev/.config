@@ -16,3 +16,4 @@
 # fi
 
 osascript -e "tell application \"Kitty\" to activate"
+

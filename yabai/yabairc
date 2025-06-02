@@ -7,11 +7,11 @@ set -x
 declare -A gaps
 declare -A color
 
-gaps["top"]="8"
-gaps["bottom"]="8"
-gaps["left"]="8"
-gaps["right"]="8"
-gaps["inner"]="10"
+gaps["top"]="7"
+gaps["bottom"]="7"
+gaps["left"]="7"
+gaps["right"]="7"
+gaps["inner"]="8"
 
 color["focused"]="0xE0808080"
 color["normal"]="0x00010101"
