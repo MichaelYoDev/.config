@@ -1,7 +1,6 @@
 # Zathura configuration file
 # See man `man zathurarc'
 
-
 # One page per row by default
 set pages-per-row 1
 
@@ -18,14 +17,13 @@ map J zoom out
 map K zoom in
 map R rotate
 
-
 #zoom settings
 set zoom-min 10
 set guioptions ""
 
 # zathurarc-dark
 set font "jetbrainsmono nerd font 15"
-set default-bg "#191724" #00
+set default-bg "rgba(31, 29, 46, .8)" #00
 set default-fg "#e0def4" #01
 
 set statusbar-fg "#908caa" #04
@@ -53,8 +51,8 @@ set notification-bg "#90A959" #0B
 set notification-fg "#191724" #00
 
 set recolor "true"
-set recolor-lightcolor "#191724" #00
-set recolor-darkcolor "#E0E0E0" #06
+set recolor-lightcolor "rgba(31, 29, 46, 0)" #00
+set recolor-darkcolor "rgba(224, 222, 244, 1)" #05
 set recolor-reverse-video "true"
 set recolor-keephue "true"
 
