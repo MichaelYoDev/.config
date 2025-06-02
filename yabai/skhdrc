@@ -1,8 +1,8 @@
 # opens Terminal
 alt - return : "${HOME}"/.config/scripts/open-term.sh
 
-# application picker
-lctrl + alt - space : "${HOME}"/.config/scripts/apps-picker.sh
+# script picker
+alt - space : "${HOME}"/.config/scripts/script-picker.sh
 
 # Navigation
 alt - h : yabai -m window --focus west
