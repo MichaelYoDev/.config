@@ -1,57 +1,40 @@
 local colors = require("colors")
+local sbar = require("sketchybar")
 local icons = require("icons")
 local settings = require("settings")
-local app_icons = require("helpers.app_icons")
 
-local spaces = {}
+for i = 1, 10 do
+	local space = sbar.add("space", "space." .. i, {
+		position = "left",
+		space = i,
+		icon = { width = 7 },
+		background = {
+			corner_radius = 10,
+			height = 14,
+			padding_left = i == 1 and 7 or 0,
+			padding_right = 7,
+		},
+	})
 
-function Str_table(s)
-    local result = {}
-    for line in s:gmatch("([^\n]+)") do
-        table.insert(result, line)
-    end
-    return result
+	space:subscribe("space_change", function (env)
+		local selected = env.SELECTED == "true"
+		sbar:animate("tanh", 15, function()
+			space:set({
+				icon = { width = selected and 31 or 7 },
+				background = { color = selected and colors.red or colors.white},
+			})
+		end)
+	end)
 end
 
-local file = io.popen("yabai -m query --spaces | jq -r '.[].index'")
-local result = file:read("*a")
-file:close()
-
-local workspaces = Str_table(result)
-
-local space_names = {}
-for i, workspace in ipairs(workspaces) do
-    local space = sbar.add("space", "space." .. i, {
-        space = i,
-        icon = {
-            string = "●",
-            color = colors.white,
-            highlight_color = colors.red,
-        },
-        label = { drawing = false },
-        padding_left = (i == 1) and 8 or 2,        -- Increased padding for the first item
-        padding_right = (i == #workspaces) and 8 or 2, -- Increased padding for the last item
-    })
-
-    spaces[i] = space
-
-    table.insert(space_names, space.name)
-
-    space:subscribe("space_change", function(env)
-        local selected = env.SELECTED == "true"
-        space:set({
-            icon = { highlight = selected },
-        })
-    end)
-end
-
-local space_bracket = sbar.add("bracket", space_names, {
-    background = {
-        color = colors.transparent,
+sbar.add("bracket", { "/space\\.\\d*/" }, {
+	blur_radius = 32,
+	background = {
+		color = colors.transparent,
         border_color = colors.bg2,
-        height = 28,
-        border_width = 2
-    }
+        border_width = 2,
+		height = 28,
+	},
 })
 
 local spaces_indicator = sbar.add("item", {
@@ -84,29 +67,6 @@ local space_window_observer = sbar.add("item", {
   drawing = false,
   updates = true,
 })
-
-space_window_observer:subscribe("space_windows_change", function(env)
-    local icon_line = ""
-    local no_app = true
-    for app, count in pairs(env.INFO.apps) do
-        no_app = false
-        local lookup = app_icons[app]
-        local icon = ((lookup == nil) and app_icons["Default"] or lookup)
-        icon_line = icon_line .. icon
-    end
-
-    if (no_app) then
-        icon_line = ""
-    end
-    sbar.animate("tanh", 10, function()
-        spaces[env.INFO.space]:set({
-            label = {
-                string = icon_line,
-                padding_right = no_app and 2 or 13
-            }
-        })
-    end)
-end)
 
 spaces_indicator:subscribe("swap_menus_and_spaces", function(env)
     local currently_on = spaces_indicator:query().icon.value == icons.switch.on
@@ -144,3 +104,4 @@ end)
 spaces_indicator:subscribe("mouse.clicked", function(env)
     sbar.trigger("swap_menus_and_spaces")
 end)
+
