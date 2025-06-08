@@ -20,7 +20,6 @@ local cal = sbar.add("item", {
     align = "right",
     font = {
       style = settings.font.numbers,
-      --size = 14.0,
     },
   },
   position = "right",
