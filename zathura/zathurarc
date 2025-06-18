@@ -17,6 +17,11 @@ map J zoom out
 map K zoom in
 map R rotate
 
+# better scrolling
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"
+set scroll-step 5
+
 #zoom settings
 set zoom-min 10
 set guioptions ""
