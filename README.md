@@ -1,10 +1,10 @@
-# 🛠️ MichaelYoDev's Dotfiles
+# MichaelYoDev's Dotfiles
 
 My personal macOS dotfiles, customized for a fast, keyboard-driven, minimal workflow with clean visuals and a cohesive theme (Rose Pine inspired). This repo includes configs for terminal tools, desktop enhancements, media, and automation.
 
 ---
 
-## 📸 Previews
+## Previews
 
 | ![space 1](/images/space1.png) | ![space 2](/images/space2.png) |
 |:--:|:--:|
@@ -14,7 +14,7 @@ My personal macOS dotfiles, customized for a fast, keyboard-driven, minimal work
 
 ---
 
-## 🧰 System Overview
+## System Overview
 
 | Component        | Tool |
 |------------------|------|
