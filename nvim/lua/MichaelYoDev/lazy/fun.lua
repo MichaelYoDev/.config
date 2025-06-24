@@ -1,6 +1,6 @@
 return {
     "eandrju/cellular-automaton.nvim",
-    "theprimeagen/vim-be-good",
+    "szymonwilczek/vim-be-better",
     "vuciv/golf",
 
     dependencies = {
