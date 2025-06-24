@@ -1,6 +1,6 @@
 # MichaelYoDev's Dotfiles
 
-My personal macOS rice — clean, minimal, and keyboard-focused. Built for speed, simplicity, and daily joy.
+My personal macOS rice!
 
 ---
 
@@ -33,5 +33,4 @@ My personal macOS rice — clean, minimal, and keyboard-focused. Built for speed
 
 ---
 
-> Everything here is tuned for a lightweight, distraction-free environment with just the right amount of flair.
 > Feel free to fork, adapt, or reuse anything.
