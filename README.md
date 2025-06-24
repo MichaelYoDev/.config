@@ -11,7 +11,8 @@ My personal macOS rice!
 | ![choose picker gif](/images/chooseScriptsDemo.gif) | ![space 5](/images/space5.png) |
 
 > The picker shown in the gif is powered by [`choose-gui`](https://github.com/chipsenkbeil/choose).
-> More scripts like it can be found in [my `scripts/` repo](https://github.com/MichaelYoDev/scripts).
+> 
+> Check out my [scripts](https://github.com/MichaelYoDev/scripts) repo!
 
 ---
 
@@ -30,7 +31,3 @@ My personal macOS rice!
 | Multiplexer       | [tmux](https://github.com/tmux/tmux) |
 | System Info       | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 | Theme             | [rosepine](https://rosepinetheme.com/) |
-
----
-
-> Feel free to fork, adapt, or reuse anything.
