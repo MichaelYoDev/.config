@@ -15,6 +15,10 @@
     },
     "modules": [
         {
+            "key":" ",
+            "type": "custom"
+        },
+        {
             "key": "{#31}{$1} user    {#keys}",
             "type": "title",
             "format": "{user-name}"
