@@ -2,21 +2,20 @@
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
         "type": "auto",
-        "source": "~/.config/fastfetch/ascii/computer.txt",
+        "source": "~/.config/fastfetch/ascii/computerSmall.txt",
         "padding": {
-            "top": 0
+            "top": 1
         }
     },
     "display": {
         "constants": [
-            "██ "
+            "█ "
         ],
         "separator": " ",
     },
     "modules": [
         {
-            "key":" ",
-            "type": "custom"
+            "type": "break"
         },
         {
             "key": "{#31}{$1} user    {#keys}",
@@ -52,15 +51,5 @@
             "key": "{#32}{$1} shell   {#keys}",
             "type": "shell"
         },
-        {
-            "key": "{#33}{$1} cpu     {#keys}",
-            "type": "cpu",
-            "showPeCoreCount": true
-        },
-        {
-            "key": "{#34}{$1} memory  {#keys}",
-            "type": "memory"
-        },
     ]
 }
-
