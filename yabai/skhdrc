@@ -1,5 +1,5 @@
 # SCRIPTS
-alt - space : "${HOME}"/.config/scripts/script-picker.sh
+alt - space : "${HOME}"/.config/scripts/choose/script-picker.sh
 alt - return : "${HOME}"/.config/scripts/term/open-term.sh
 alt - e : "${HOME}"/.config/scripts/choose/emoji.sh
 alt - a : "${HOME}"/.config/scripts/choose/apps-picker.sh
