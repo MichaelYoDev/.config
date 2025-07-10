@@ -1,5 +1,3 @@
--- vim.o.winborder = "rounded"
-
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -36,4 +34,4 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.inccommand = 'split'
 
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 0

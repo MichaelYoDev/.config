@@ -2,12 +2,13 @@ return {
     "sylvanfranklin/omni-preview.nvim",
     dependencies = {
         -- Typst
-        { "chomosuke/typst-preview.nvim", lazy = true },
+        { "chomosuke/typst-preview.nvim",              lazy = true },
 
         -- CSV
-        { "hat0uma/csvview.nvim",         lazy = true },
+        { "hat0uma/csvview.nvim",                      lazy = true },
 
         -- Markdown
+        { "MeanderingProgrammer/render-markdown.nvim", lazy = true },
         {
             "toppair/peek.nvim",
             event = { "VeryLazy" },
