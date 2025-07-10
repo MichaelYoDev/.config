@@ -10,15 +10,15 @@ My personal macOS rice!
 |:-----------------------------:|:-----------------------------:|
 | ![choose picker gif](/images/chooseScriptsDemo.gif) | ![space 5](/images/space5.png) |
 
-> The picker shown in the gif is powered by [`choose-gui`](https://github.com/chipsenkbeil/choose).
-> 
 > Check out my [scripts](https://github.com/MichaelYoDev/scripts) repo!
+>
+> The picker shown in the gif uses [`choose-gui`](https://github.com/chipsenkbeil/choose).
 
 ---
 
 ## System Overview
 
-| Area              | Tool |
+| Component         | Tool |
 |-------------------|------|
 | Terminal          | [Kitty](https://sw.kovidgoyal.net/kitty/) |
 | Editor            | [Neovim](https://neovim.io) (btw) |
