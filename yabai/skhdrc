@@ -7,6 +7,7 @@ alt - w : "${HOME}"/.config/scripts/choose/wallpapers.sh
 alt - c : "${HOME}"/.config/scripts/choose/cam.sh
 alt - s : "${HOME}"/.config/scripts/choose/sleep.sh
 alt - n : "${HOME}"/.config/scripts/choose/notes.sh
+alt - p : "${HOME}"/.config/scripts/choose/process.sh
 
 # Navigation
 alt - h : yabai -m window --focus west
