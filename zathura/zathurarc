@@ -28,36 +28,36 @@ set guioptions ""
 
 # zathurarc-dark
 set font "jetbrainsmono nerd font 15"
-set default-bg "rgba(31, 29, 46, .8)" #00
-set default-fg "#e0def4" #01
+set default-bg "rgba(31, 29, 46, .8)"
+set default-fg "#e0def4"        # text
 
-set statusbar-fg "#908caa" #04
-set statusbar-bg "#26233a" #01
+set statusbar-fg "#908caa"      # foam
+set statusbar-bg "#26233a"      # surface
 
-set inputbar-bg "#1f1d2e" #00 currently not used
-set inputbar-fg "#e0def4" #02
+set inputbar-bg "#1f1d2e"       # base
+set inputbar-fg "#e0def4"       # text
 
-set notification-error-bg "#AC4142" #08
-set notification-error-fg "#191724" #00
+set notification-error-bg "#eb6f92" # love
+set notification-error-fg "#191724" # base
 
-set notification-warning-bg "#AC4142" #08
-set notification-warning-fg "#191724" #00
+set notification-warning-bg "#f6c177"   # gold
+set notification-warning-fg "#191724"   # base
 
-set highlight-color "#f6c177" #0A
-set highlight-active-color "#31748f" #0D
+set highlight-color "#f6c177"           # gold
+set highlight-active-color "#31748f"    # iris
 
-set completion-highlight-fg "#191724" #02
-set completion-highlight-bg "#00BCD4B3" #0C
+set completion-highlight-fg "#191724"   # base
+set completion-highlight-bg "#9ccfd8"   # foam (highlight variant)
 
-set completion-bg "#30303003" #02
-set completion-fg "#FFC107C4" #0C
+set completion-bg "#2a273f"     # overlay
+set completion-fg "#e0def4"     # text
 
-set notification-bg "#90A959" #0B
-set notification-fg "#191724" #00
+set notification-bg "#31748f"   # iris
+set notification-fg "#191724"   # base
 
 set recolor "true"
-set recolor-lightcolor "rgba(31, 29, 46, 0)" #00
-set recolor-darkcolor "rgba(224, 222, 244, 1)" #05
+set recolor-lightcolor "rgba(31, 29, 46, 0)"  # base, transparent
+set recolor-darkcolor "rgba(224, 222, 244, 1)" # text
 set recolor-reverse-video "true"
 set recolor-keephue "true"
 
