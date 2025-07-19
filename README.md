@@ -21,7 +21,7 @@ My personal macOS rice!
 
 | Component         | Tool |
 |-------------------|------|
-| Terminal          | [Kitty](https://sw.kovidgoyal.net/kitty/) |
+| Terminal          | [Ghostty](https://ghostty.org/) |
 | Editor            | [Neovim](https://neovim.io) (btw) |
 | Window Manager    | [Yabai](https://github.com/koekeishiya/yabai) + [skhd](https://github.com/koekeishiya/skhd) |
 | Borders           | [JankyBorders](https://github.com/FelixKratz/JankyBorders) |
