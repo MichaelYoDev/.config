@@ -10,6 +10,7 @@ My personal macOS rice!
 |:-----------------------------:|:-----------------------------:|
 | ![choose picker gif](/images/chooseScriptsDemo.gif) | ![space 5](/images/space5.png) |
 
+> [!NOTE]
 > Check out my [scripts](https://github.com/MichaelYoDev/scripts) repo!
 >
 > The picker shown in the gif uses [`choose-gui`](https://github.com/chipsenkbeil/choose).
