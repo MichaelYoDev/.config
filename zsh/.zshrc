@@ -13,7 +13,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
-fastfetch
+nerdfetch
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -26,21 +26,9 @@ setopt hist_verify
 
 # ---- Aliases ----
 alias vi="nvim"
+alias ls="eza -lh --group-directories-first --icons=auto"
 
 # ---- Tmux Scripts ----
 export PATH=$PATH:/Users/michaeloliveira/.config/scripts/term
 bindkey -s ^f "tmux-sessionizer.sh\n"
 bindkey -s ^o "open-files.sh\n"
-
-# ---- Go stuff ----
-export GOPATH="/Users/michaeloliveira/go"
-export GOBIN="$HOME/go/bin"
-case ":$PATH:" in
-    ":$GOBIN:") ;;
-    *) export PATH="$GOBIN:$PATH" ;;
-esac
-
-path+=('/Users/michaeloliveira/.local/bin')
-
-export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
-. "/Users/michaeloliveira/.deno/env"
