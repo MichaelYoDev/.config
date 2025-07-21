@@ -7,7 +7,9 @@ sbar.bar({
 	color = colors.bar.bg,
 	padding_right = 2,
 	padding_left = 2,
-	blur_radius = 15,
-	shadow = true,
+	-- blur_radius = 15,
+    blur_radius = 0,
+	-- shadow = true,
+    shadow = false,
 	sticky = true,
 })

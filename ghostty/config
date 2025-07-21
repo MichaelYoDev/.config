@@ -1,7 +1,7 @@
 theme = light:rose-pine-dawn,dark:rose-pine
 background = 1f1d2e
 background-blur = true
-background-opacity = 0.80
+background-opacity = 1
 
 font-family = JetBrainsMono Nerd Font
 font-size = 14
