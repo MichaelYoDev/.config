@@ -3,13 +3,12 @@ return {
     dependencies = {
         { "mason-org/mason.nvim",           version = "^1.0.0" },
         { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
-        -- "williamboman/mason.nvim",
-        -- "williamboman/mason-lspconfig.nvim",
+        -- "mason-org/mason.nvim",
+        -- "mason-org/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
-        "jcha0713/cmp-tw2css",
         "hrsh7th/nvim-cmp",
     },
 
@@ -34,7 +33,7 @@ return {
                 -- "rust_analyzer",
                 "pylsp",
                 -- "jdtls",
-                -- "gopls",
+                "gopls",
                 "tinymist",
             },
             handlers = {
@@ -42,20 +41,6 @@ return {
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
-                end,
-                ["svelte"] = function()
-                    require("lspconfig")["svelte"].setup({
-                        capabilities = capabilities,
-                        on_attach = function(client, bufnr)
-                            vim.api.nvim_create_autocmd("BufWritePost", {
-                                pattern = { "*.js", "*.ts" },
-                                callback = function(ctx)
-                                    -- this bad boy updates imports between svelte and ts/js files
-                                    client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-                                end,
-                            })
-                        end
-                    })
                 end,
                 ["tinymist"] = function()
                     require("lspconfig")["tinymist"].setup {
@@ -67,20 +52,6 @@ return {
                         },
                     }
                 end,
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                runtime = { version = "Lua 5.1" },
-                                diagnostics = {
-                                    globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
-                    }
-                end
             }
 
         })

@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "MichaelYoDev.lazy",
+    spec = "MichaelYoDev.plugins",
     change_detection = { notify = false },
     ui = {
 		border = "rounded",

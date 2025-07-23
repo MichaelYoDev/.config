@@ -19,5 +19,9 @@ return {
     opts = {},
     keys = {
         { "<leader>po", "<cmd>OmniPreview start<CR>", desc = "OmniPreview Start" },
-    }
+    },
+    config = function()
+        require("omni-preview").setup()
+        require("csvview").setup()
+    end
 }
