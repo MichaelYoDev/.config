@@ -1,3 +1,6 @@
+# Start yabai
+shift + lctrl + alt - r : "${HOME}"/.config/scripts/stuff/yabai-start.sh
+
 # SCRIPTS
 alt - space : "${HOME}"/.config/scripts/choose/script-picker.sh
 alt - return : "${HOME}"/.config/scripts/term/open-term.sh
@@ -61,3 +64,4 @@ shift + lctrl + alt - h : yabai -m window --insert west
 shift + lctrl + alt - j : yabai -m window --insert south
 shift + lctrl + alt - k : yabai -m window --insert north
 shift + lctrl + alt - l : yabai -m window --insert east
+
