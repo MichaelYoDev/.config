@@ -35,6 +35,7 @@ return {
                 -- "jdtls",
                 "gopls",
                 "tinymist",
+                "ts_ls",
             },
             handlers = {
                 function(server_name)
