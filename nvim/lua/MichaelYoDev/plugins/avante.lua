@@ -1,26 +1,26 @@
 return {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    version = "*", -- set this if you want to always pull the latest change
-    opts = {
-        provider = "ollama",
-        providers = {
-            ollama = {
-                endpoint = "http://localhost:11434",
-                disable_tools = false,
-                model = "qwen2.5-coder:7b",
-                extra_request_body = {
-                    stream = true
-                }
-            },
-        }
-    },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = "make",
-    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-    },
+    -- "yetone/avante.nvim",
+    -- event = "VeryLazy",
+    -- lazy = false,
+    -- version = "*", -- set this if you want to always pull the latest change
+    -- opts = {
+    --     provider = "ollama",
+    --     providers = {
+    --         ollama = {
+    --             endpoint = "http://localhost:11434",
+    --             disable_tools = false,
+    --             model = "qwen2.5-coder:7b",
+    --             extra_request_body = {
+    --                 stream = true
+    --             }
+    --         },
+    --     }
+    -- },
+    -- -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+    -- build = "make",
+    -- -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+    -- dependencies = {
+    --     "nvim-lua/plenary.nvim",
+    --     "MunifTanjim/nui.nvim",
+    -- },
 }
