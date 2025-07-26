@@ -1,6 +1,7 @@
 require("MichaelYoDev.config.set")
 require("MichaelYoDev.config.remap")
 require("MichaelYoDev.config.lazy_init")
-require("MichaelYoDev.config.typst")
+require("MichaelYoDev.config.export_typst")
 require("MichaelYoDev.config.autocmds")
 require("MichaelYoDev.config.lsp")
+require("MichaelYoDev.config.snippets")
