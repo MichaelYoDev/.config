@@ -15,5 +15,7 @@ return {
         require('mini.pairs').setup()
 
         require('mini.surround').setup()
+
+        require('mini.pick').setup()
     end,
 }
