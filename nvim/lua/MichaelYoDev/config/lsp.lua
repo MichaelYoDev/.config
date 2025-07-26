@@ -1,9 +1,7 @@
--- Enable LSP for specified languages
 vim.lsp.enable({
     'bash', 'css', 'go', 'html', 'java', 'lua', 'md', 'python', 'rust', 'ts', 'typst',
 })
 
--- Configure LSP hover with custom styling
 vim.lsp.buf.hover = function()
     vim.lsp.buf.hover({
         border = "rounded",
@@ -12,7 +10,6 @@ vim.lsp.buf.hover = function()
     })
 end
 
--- Configure diagnostic display
 vim.diagnostic.config({
     float = { border = "rounded" }
 })

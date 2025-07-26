@@ -4,7 +4,6 @@ local autocmd = api.nvim_create_autocmd
 
 local trimGroup = augroup("TrimWhitespace", {})
 local yankGroup = augroup("HighlightYank", {})
-local luasnipGroup = augroup("LuaSnipExpand", {})
 
 -- Highlight on yank
 autocmd("TextYankPost", {
