@@ -1,22 +1,13 @@
-local api = vim.api
-local augroup = api.nvim_create_augroup
-local autocmd = api.nvim_create_autocmd
-
-local trimGroup = augroup("TrimWhitespace", {})
-local yankGroup = augroup("HighlightYank", {})
-
--- Highlight on yank
-autocmd("TextYankPost", {
-    group = yankGroup,
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("HighlightYank", {}),
     pattern = "*",
     callback = function()
         vim.highlight.on_yank({ higroup = "IncSearch", timeout = 60 })
     end,
 })
 
--- Trim trailing whitespace on save
-autocmd("BufWritePre", {
-    group = trimGroup,
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = vim.api.nvim_create_augroup("TrimWhitespace", {}),
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
