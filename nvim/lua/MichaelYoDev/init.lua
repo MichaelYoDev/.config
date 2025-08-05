@@ -1,6 +1,0 @@
-require("MichaelYoDev.config.set")
-require("MichaelYoDev.config.remap")
-require("MichaelYoDev.config.autocmds")
-require("MichaelYoDev.config.lsp")
-require("MichaelYoDev.config.snippets")
-require("MichaelYoDev.config.lazy_init")
