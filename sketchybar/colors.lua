@@ -14,7 +14,8 @@ return {
 
 	bar = {
 		-- bg = 0xCC1f1d2e,
-		bg = 0xF21f1d2e,
+		-- bg = 0xF21f1d2e,
+		bg = 0xFF1f1d2e,
 		border = 0xff2c2e34,
 	},
 	popup = {
