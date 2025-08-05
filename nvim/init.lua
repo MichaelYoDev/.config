@@ -1,76 +1,71 @@
 -- SET
-vim.o.guicursor = ""
-vim.o.clipboard = "unnamedplus"
+local o = vim.opt
+o.guicursor = ""
+o.clipboard = "unnamedplus"
 
-vim.o.nu = true
-vim.o.relativenumber = true
+o.number = true
+o.relativenumber = true
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
+o.expandtab = true
+o.smartindent = false
 
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = true
+o.wrap = false
+o.swapfile = false
+o.undofile = true
+o.hlsearch = true
+o.inccommand = "split"
 
-vim.o.smartindent = false
+o.termguicolors = true
+o.winborder = "rounded"
+o.scrolloff = 8
+o.signcolumn = "yes"
+o.ignorecase = true
+o.smartcase = true
+o.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup", "noselect" }
 
-vim.o.wrap = false
-
-vim.o.swapfile = false
-vim.o.backup = false
-vim.o.undofile = true
-
-vim.o.hlsearch = false
-vim.o.incsearch = true
-
-vim.o.termguicolors = true
-vim.o.pumblend = 0
-vim.o.winblend = 0
-vim.o.winborder = "rounded"
-
-vim.o.scrolloff = 8
-vim.o.signcolumn = "yes"
-
-vim.o.updatetime = 50
-
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.inccommand = 'split'
-
-vim.o.conceallevel = 0
-
--- REMAP
+-- MAP
 vim.g.mapleader = " "
 
-vim.keymap.set({ "n", "x" }, "<leader>e", "<CMD>Oil<Cr>")
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-vim.keymap.set('n', '<leader>f', ":Pick files<CR>")
-vim.keymap.set('n', '<leader>h', ":Pick help<CR>")
-vim.keymap.set('n', '<leader>t', "<CMD>TypstPreview<Cr>")
+local m = vim.keymap.set
+m("n", "<leader>e", ":Oil<CR>")
+m("n", "<leader>f", ":Pick files<CR>")
+m("n", "<leader>h", ":Pick help<CR>")
+m("n", "<leader>m", ":Mason<CR>")
+m("n", "<leader>te", ":LspTinymistExportPdf<CR>")
+m("n", "<leader>tp", ":TypstPreview<CR>")
 
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("n", "J", "mzJ`z")
+m("n", "<leader>o", ":update<CR>:source<CR>")
+m("n", "<leader>w", ":write<CR>")
+m("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+m("n", "<leader>x", ":!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
+m("n", "<leader>lf", vim.lsp.buf.format)
+m("n", "<leader>lk", vim.diagnostic.open_float)
+m("n", "gd", vim.lsp.buf.definition)
 
-vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
-vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "<leader>lk", vim.diagnostic.open_float)
+m("v", "K", ":m '<-2<CR>gv=gv")
+m("v", "J", ":m '>+1<CR>gv=gv")
+m("n", "J", "mzJ`z")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+m("x", "<leader>p", [["_dP]])
+m({ "n", "v" }, "<leader>d", [["_d]])
 
 -- AUTOCMDS
-vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("HighlightYank", {}),
-    pattern = "*",
+local aucmd = vim.api.nvim_create_autocmd
+local augrp = vim.api.nvim_create_augroup
+
+aucmd("TextYankPost", {
+    group = augrp("HighlightYank", {}),
+    pattern = '*',
     callback = function()
-        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 60 })
+        vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 40 })
     end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-    group = vim.api.nvim_create_augroup("TrimWhitespace", {}),
+aucmd("BufWritePre", {
+    group = augrp("TrimWhitespace", {}),
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
@@ -79,66 +74,55 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.lsp.enable({ 'bash', 'vscode-css-language-server', 'gopls', 'vscode-html-language-server', 'jdtls', 'lua_ls',
     'markdown_oxide', 'pylsp', 'rust_analyzer', 'ts_ls', 'tinymist' })
 
-vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup("lsp-config", { clear = true }),
+aucmd('LspAttach', {
+    group = augrp("lsp-config", { clear = true }),
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
         if client:supports_method('textDocument/completion') then
-            vim.opt.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup" }
             vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
         end
     end,
 })
-vim.cmd("set completeopt+=noselect")
 
+vim.lsp.config("tinymist", {
+    capabilities = capabilities,
+    settings = { formatterMode = "typstyle", formatterIndentSize = 4, exportPdf = "onType" },
+})
 
--- Snippets
--- none for now, maybe add later?
+vim.lsp.config("lua_ls", {
+    settings = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("", true) } } }
+})
 
 -- PACK
 vim.pack.add({
-    { src = "https://github.com/rose-pine/neovim" },
-    { src = "https://github.com/xiyaowong/transparent.nvim" },
-    { src = "https://github.com/szymonwilczek/vim-be-better" },
+    { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/echasnovski/mini.nvim" },
+    { src = "https://github.com/rose-pine/neovim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+    { src = "https://github.com/xiyaowong/transparent.nvim" },
     { src = "https://github.com/chomosuke/typst-preview.nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    { src = "https://github.com/mbbill/undotree" },
 })
 
--- SETUP FOR PACK
-require("rose-pine").setup({
-    styles = {
-        transparency = true,
-    },
-})
-vim.cmd("colorscheme rose-pine")
-vim.cmd(":hi statusline guibg=NONE")
+-- PACK SETUP
+require("rose-pine").setup({ styles = { transparency = true } })
+vim.cmd.colorscheme("rose-pine")
+vim.cmd.hi("statusline guibg=NONE")
 
-require('mini.diff').setup()
+require("mason").setup()
 
-require('mini.icons').setup()
-
-require('mini.indentscope').setup({
+require("mini.diff").setup()
+require("mini.icons").setup()
+require("mini.pairs").setup()
+require("mini.surround").setup()
+require("mini.pick").setup()
+require("mini.indentscope").setup({
     symbol = "▏",
     options = { try_as_border = true },
     delay = 0,
     draw = { animation = require("mini.indentscope").gen_animation.none() },
 })
 
-require('mini.pairs').setup()
-
-require('mini.surround').setup()
-
-require('mini.pick').setup()
-
-require("oil").setup({
-    view_options = {
-        show_hidden = true,
-    }
-})
-
-require("nvim-treesitter").setup()
+require("oil").setup({ view_options = { show_hidden = true } })
