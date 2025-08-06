@@ -32,3 +32,4 @@ My personal macOS rice!
 | Multiplexer       | [tmux](https://github.com/tmux/tmux) |
 | System Info       | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 | Theme             | [rosepine](https://rosepinetheme.com/) |
+| Keyboard          | [Corne](https://github.com/foostan/crkbd) |
