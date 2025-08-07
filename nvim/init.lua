@@ -1,51 +1,63 @@
--- SET
+-- SET =========================================================================
 local o = vim.opt
+
+-- ui
 o.guicursor = ""
-o.clipboard = "unnamedplus"
 o.number = true
 o.relativenumber = true
+o.scrolloff = 8
+o.signcolumn = "yes"
+o.termguicolors = true
+o.winborder = "rounded"
+o.wrap = false
+
+-- indent
 o.tabstop = 4
 o.softtabstop = 4
 o.shiftwidth = 4
 o.expandtab = true
-o.smartindent = false
-o.wrap = false
+o.smartindent = true
+
+-- files
+o.clipboard = "unnamedplus"
 o.swapfile = false
 o.undofile = true
-o.termguicolors = true
-o.winborder = "rounded"
-o.scrolloff = 8
-o.signcolumn = "yes"
+
+-- search
 o.ignorecase = true
 o.smartcase = true
+
+-- completion
 o.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup", "noselect" }
 
--- MAP
+-- leader
 vim.g.mapleader = " "
 
+-- KEYMAPS =====================================================================
 local m = vim.keymap.set
-m("n", "<leader>e", ":Oil<CR>")
-m("n", "<leader>f", ":Pick files<CR>")
-m("n", "<leader>h", ":Pick help<CR>")
-m("n", "<leader>lf", vim.lsp.buf.format)
-m("n", "<leader>m", ":Mason<CR>")
-m("n", "<leader>o", ":update<CR>:source<CR>")
-m("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-m("n", "<leader>te", ":LspTinymistExportPdf<CR>")
-m("n", "<leader>tp", ":TypstPreview<CR>")
-m("n", "<leader>u", vim.pack.update)
-m("n", "<leader>w", ":write<CR>")
-m("n", "<leader>x", ":!chmod +x %<CR>", { silent = true })
 
--- AUTOCMDS
+m("n", "<leader>e", "<CMD>Oil<CR>")
+m("n", "<leader>f", "<CMD>Pick files<CR>")
+m("n", "<leader>h", "<CMD>Pick help<CR>")
+m("n", "<leader>lf", vim.lsp.buf.format)
+m("n", "<leader>m", "<CMD>Mason<CR>")
+m("n", "<leader>o", "<CMD>update<CR><CMD>source<CR>")
+m("n", "<leader>s", [[<CMD>%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+m("n", "<leader>te", "<CMD>LspTinymistExportPdf<CR>")
+m("n", "<leader>tp", "<CMD>TypstPreview<CR>")
+m("n", "<leader>u", vim.pack.update)
+m("n", "<leader>w", "<CMD>write<CR>")
+m("n", "<leader>x", "<CMD>!chmod +x %<CR>", { silent = true })
+
+-- AUTOCOMMANDS ================================================================
 local aucmd = vim.api.nvim_create_autocmd
 local augrp = vim.api.nvim_create_augroup
 
 aucmd("TextYankPost", {
     group = augrp("HighlightYank", {}),
-    pattern = '*',
+    pattern = "*",
     callback = function()
-        vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 40 })
+        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 40 })
     end,
 })
 
@@ -55,45 +67,67 @@ aucmd("BufWritePre", {
     command = [[%s/\s\+$//e]],
 })
 
--- LSP
-vim.lsp.enable({ 'bash', 'vscode-css-language-server', 'gopls', 'vscode-html-language-server', 'jdtls', 'lua_ls',
-    'markdown_oxide', 'pylsp', 'rust_analyzer', 'ts_ls', 'tinymist' })
+-- LSP =========================================================================
+vim.lsp.enable({
+    "bashls",
+    "cssls",
+    "gopls",
+    "html",
+    "jdtls",
+    "lua_ls",
+    "markdown_oxide",
+    "pylsp",
+    "rust_analyzer",
+    "ts_ls",
+    "tinymist",
+})
 
-aucmd('LspAttach', {
+aucmd("LspAttach", {
     group = augrp("lsp-config", { clear = true }),
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        if client:supports_method('textDocument/completion') then
+        if client:supports_method("textDocument/completion") then
             vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
         end
     end,
 })
 
 vim.lsp.config("lua_ls", {
-    settings = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("", true) } } }
+    settings = {
+        Lua = {
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+        },
+    },
 })
 
 vim.lsp.config("tinymist", {
     capabilities = capabilities,
-    settings = { formatterMode = "typstyle", formatterIndentSize = 4, exportPdf = "onType" },
+    settings = {
+        formatterMode = "typstyle",
+        formatterIndentSize = 4,
+        exportPdf = "onType",
+    },
 })
 
--- PACK
+-- PLUGINS =====================================================================
 vim.pack.add({
-    { src = "https://github.com/mason-org/mason.nvim" },
+    { src = "https://github.com/chomosuke/typst-preview.nvim" },
     { src = "https://github.com/echasnovski/mini.nvim" },
+    { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/rose-pine/neovim" },
+    { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/xiyaowong/transparent.nvim" },
-    { src = "https://github.com/chomosuke/typst-preview.nvim" },
 })
 
--- PACK SETUP
 require("mason").setup()
 
-require("oil").setup({ view_options = { show_hidden = true } })
+require("oil").setup({
+    view_options = { show_hidden = true },
+})
 
 require("mini.icons").setup()
 require("mini.indentscope").setup({
@@ -105,5 +139,7 @@ require("mini.indentscope").setup({
 require("mini.pairs").setup()
 require("mini.pick").setup()
 
-require("rose-pine").setup({ styles = { transparency = true } })
+require("rose-pine").setup({
+    styles = { transparency = true },
+})
 vim.cmd.colorscheme("rose-pine")
