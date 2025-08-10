@@ -30,25 +30,3 @@ return {
         ]], { i(1), i(2) })
     ),
 }
-
--- return {
---   { trigger = "warn", expansion = "> [!WARNING]\n> ${1}" },
---   { trigger = "info", expansion = "> [!INFO]\n> ${1}" },
---   { trigger = "tip", expansion = "> [!TIP]\n> ${1}" },
---   { trigger = "hint", expansion = "> [!HINT]\n> ${1}" },
---   { trigger = "note", expansion = "> [!NOTE]\n> ${1}" },
---   { trigger = "danger", expansion = "> [!DANGER]\n> ${1}" },
---
---   { trigger = "link", expansion = "[${1}](${2})" },
---
---   { trigger = "img", expansion = "![${1}](${2})" },
---
---   { trigger = "table", expansion =
---     [[
--- | ${1} | ${2} |
--- | :----: | :----: |
--- | ${3} | ${4} |
--- | ${5} | ${6} |
--- ]]
---   },
--- }

@@ -51,14 +51,6 @@ aucmd("BufWritePre", {
     command = [[%s/\s\+$//e]],
 })
 
-aucmd("FileType", {
-    pattern = { "text", "typst", "markdown" },
-    callback = function()
-        vim.opt_local.spell = true
-        vim.opt_local.spelllang = "en_us"
-    end,
-})
-
 -- LSP =========================================================================
 vim.lsp.enable({ "bashls", "cssls", "gopls", "html", "jdtls", "lua_ls", "markdown_oxide", "pylsp", "rust_analyzer",
     "tinymist", "ts_ls" })
@@ -107,7 +99,7 @@ require("mini.indentscope").setup({
 require("mini.pairs").setup()
 require("mini.pick").setup()
 
-require("oil").setup({ view_options = { show_hidden = true } })
+require("oil").setup({ view_options = { show_hidden = true }, columns = {} })
 
 require("rose-pine").setup({ styles = { transparency = true } })
 vim.cmd.colorscheme("rose-pine")
