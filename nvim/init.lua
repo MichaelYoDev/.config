@@ -28,26 +28,10 @@ o.ignorecase = true
 o.smartcase = true
 
 -- completion
-o.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup", "noselect" }
+o.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup" }
 
 -- leader
 vim.g.mapleader = " "
-
--- KEYMAPS =====================================================================
-local m = vim.keymap.set
-
-m("n", "<leader>e", "<CMD>Oil<CR>")
-m("n", "<leader>f", "<CMD>Pick files<CR>")
-m("n", "<leader>h", "<CMD>Pick help<CR>")
-m("n", "<leader>lf", vim.lsp.buf.format)
-m("n", "<leader>m", "<CMD>Mason<CR>")
-m("n", "<leader>o", "<CMD>update<CR><CMD>source<CR>")
-m("n", "<leader>s", [[<CMD>%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-m("n", "<leader>te", "<CMD>LspTinymistExportPdf<CR>")
-m("n", "<leader>tp", "<CMD>TypstPreview<CR>")
-m("n", "<leader>u", vim.pack.update)
-m("n", "<leader>w", "<CMD>write<CR>")
-m("n", "<leader>x", "<CMD>!chmod +x %<CR>", { silent = true })
 
 -- AUTOCOMMANDS ================================================================
 local aucmd = vim.api.nvim_create_autocmd
@@ -57,7 +41,7 @@ aucmd("TextYankPost", {
     group = augrp("HighlightYank", {}),
     pattern = "*",
     callback = function()
-        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 40 })
+        vim.hl.on_yank({ higroup = "IncSearch", timeout = 40 })
     end,
 })
 
@@ -67,20 +51,17 @@ aucmd("BufWritePre", {
     command = [[%s/\s\+$//e]],
 })
 
--- LSP =========================================================================
-vim.lsp.enable({
-    "bashls",
-    "cssls",
-    "gopls",
-    "html",
-    "jdtls",
-    "lua_ls",
-    "markdown_oxide",
-    "pylsp",
-    "rust_analyzer",
-    "ts_ls",
-    "tinymist",
+aucmd("FileType", {
+    pattern = { "text", "typst", "markdown" },
+    callback = function()
+        vim.opt_local.spell = true
+        vim.opt_local.spelllang = "en_us"
+    end,
 })
+
+-- LSP =========================================================================
+vim.lsp.enable({ "bashls", "cssls", "gopls", "html", "jdtls", "lua_ls", "markdown_oxide", "pylsp", "rust_analyzer",
+    "tinymist", "ts_ls" })
 
 aucmd("LspAttach", {
     group = augrp("lsp-config", { clear = true }),
@@ -92,42 +73,29 @@ aucmd("LspAttach", {
     end,
 })
 
-vim.lsp.config("lua_ls", {
-    settings = {
-        Lua = {
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-        },
-    },
-})
-
-vim.lsp.config("tinymist", {
-    capabilities = capabilities,
-    settings = {
-        formatterMode = "typstyle",
-        formatterIndentSize = 4,
-        exportPdf = "onType",
-    },
-})
-
 -- PLUGINS =====================================================================
 vim.pack.add({
+    { src = "https://github.com/L3MON4D3/LuaSnip" },
     { src = "https://github.com/chomosuke/typst-preview.nvim" },
     { src = "https://github.com/echasnovski/mini.nvim" },
     { src = "https://github.com/mason-org/mason.nvim" },
-    { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = "https://github.com/rose-pine/neovim" },
     { src = "https://github.com/stevearc/oil.nvim" },
-    { src = "https://github.com/xiyaowong/transparent.nvim" },
 })
+
+local function pack_clean()
+    local active, unused = {}, {}
+    for _, p in ipairs(vim.pack.get()) do active[p.spec.name] = p.active end
+    for _, p in ipairs(vim.pack.get()) do if not active[p.spec.name] then unused[#unused + 1] = p.spec.name end end
+    if #unused == 0 then return print("No unused plugins.") end
+    if vim.fn.confirm("Remove unused plugins?", "&Yes\n&No", 2) == 1 then vim.pack.del(unused) end
+end
+
+require("luasnip").setup({ enable_autosnippets = true })
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 
 require("mason").setup()
-
-require("oil").setup({
-    view_options = { show_hidden = true },
-})
 
 require("mini.icons").setup()
 require("mini.indentscope").setup({
@@ -139,7 +107,28 @@ require("mini.indentscope").setup({
 require("mini.pairs").setup()
 require("mini.pick").setup()
 
-require("rose-pine").setup({
-    styles = { transparency = true },
-})
+require("oil").setup({ view_options = { show_hidden = true } })
+
+require("rose-pine").setup({ styles = { transparency = true } })
 vim.cmd.colorscheme("rose-pine")
+
+-- KEYMAPS =====================================================================
+local m = vim.keymap.set
+
+m("i", "<C-e>", require("luasnip").expand, { silent = true })
+
+m("n", "<leader>e", "<CMD>Oil<CR>")
+m("n", "<leader>f", "<CMD>Pick files<CR>")
+m("n", "<leader>h", "<CMD>Pick help<CR>")
+m("n", "<leader>lf", vim.lsp.buf.format)
+m("n", "<leader>m", "<CMD>Mason<CR>")
+m("n", "<leader>o", "<CMD>update<CR><CMD>source<CR>")
+m("n", "<leader>pc", pack_clean)
+m("n", "<leader>pu", vim.pack.update)
+m("n", "<leader>q", "<CMD>quit<CR>")
+m("n", "<leader>s", [[<CMD>%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+m("n", "<leader>te", "<CMD>LspTinymistExportPdf<CR>")
+m("n", "<leader>tp", "<CMD>TypstPreview<CR>")
+m("n", "<leader>w", "<CMD>write<CR>")
+m("n", "<leader>x", "<CMD>!chmod +x %<CR>", { silent = true })
+m("n", '<leader>v', ':e $MYVIMRC<CR>')
