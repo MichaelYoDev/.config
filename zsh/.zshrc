@@ -23,10 +23,7 @@ nerdfetch
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
 HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
+setopt share_history hist_expire_dups_first hist_ignore_dups hist_verify
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -39,3 +36,7 @@ alias ls="eza -lh --group-directories-first --icons=auto"
 export PATH=$PATH:/Users/michaeloliveira/.config/scripts/term
 bindkey -s ^f "tmux-sessionizer.sh\n"
 bindkey -s ^o "open-files.sh\n"
+
+# --- Exports ---
+export EDITOR="nvim"
+export MANPAGER="nvim +Man!"
