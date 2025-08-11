@@ -12,8 +12,6 @@ My personal macOS rice!
 
 > [!NOTE]
 > Check out my [scripts](https://github.com/MichaelYoDev/scripts) repo!
->
-> The picker shown in the gif uses [`choose-gui`](https://github.com/chipsenkbeil/choose).
 
 ---
 
@@ -32,4 +30,4 @@ My personal macOS rice!
 | Multiplexer       | [tmux](https://github.com/tmux/tmux) |
 | System Info       | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 | Theme             | [rosepine](https://rosepinetheme.com/) |
-| Keyboard          | [Corne](https://github.com/foostan/crkbd) |
+| Keyboard          | [Corne 4.1](https://github.com/foostan/crkbd) |
