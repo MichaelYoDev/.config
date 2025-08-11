@@ -21,6 +21,15 @@ local ft_snippets = {
         { trigger = "tip",  body = "> [!TIP]\n> ${1}" },
         { trigger = "note", body = "> [!NOTE]\n> ${1}" },
         { trigger = "link", body = "[${1}](${2})" },
+        { trigger = "img",  body = "![${1:alt text}](${2:path/to/image.png})" },
+        {
+            trigger = "table",
+            body = [[
+| ${1:Header 1} | ${2:Header 2} |
+| --- | --- |
+| ${3:Row 1 Col 1} | ${4:Row 1 Col 2} |
+]],
+        },
     },
     typst = {
         {
