@@ -88,57 +88,23 @@ ${1}
     },
 }
 
-local function get_buf_snippets()
-    local ft = vim.bo.filetype
-    local snips = vim.deepcopy(global_snippets)
+function M.expand_snippet()
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local line = vim.api.nvim_get_current_line()
+    local trigger = line:sub(1, col):match("(%w+)$")
+    if not trigger then return end
 
+    local snips = vim.deepcopy(global_snippets)
+    local ft = vim.bo.filetype
     if ft and ft_snippets[ft] then
         vim.list_extend(snips, ft_snippets[ft])
     end
 
-    return snips
-end
-
-function M.omnifunc(findstart, base)
-    local snippets = get_buf_snippets()
-
-    if findstart == 1 then
-        local line = vim.fn.getline(".")
-        local col = vim.fn.col(".") - 1
-        local start = col
-        while start > 0 and line:sub(start, start):match("[%w_]") do
-            start = start - 1
-        end
-        return start
-    else
-        local matches = {}
-        for _, snip in ipairs(snippets) do
-            if snip.trigger:match("^" .. vim.pesc(base)) then
-                table.insert(matches, snip.trigger)
-            end
-        end
-        return matches
-    end
-end
-
-function M.expand_snippet()
-    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-    local line = vim.api.nvim_get_current_line()
-    local before_cursor = line:sub(1, col)
-    local trigger = before_cursor:match("(%w+)$")
-    if not trigger then return end
-
-    local snippets = get_buf_snippets()
-    for _, snip in ipairs(snippets) do
+    for _, snip in ipairs(snips) do
         if snip.trigger == trigger then
             local start_col = col - #trigger
             vim.api.nvim_buf_set_text(0, row - 1, start_col, row - 1, col, { "" })
-
-            local expansion = snip.body
-            if type(expansion) == "function" then
-                expansion = expansion()
-            end
-
+            local expansion = type(snip.body) == "function" and snip.body() or snip.body
             vim.snippet.expand(expansion)
             return
         end

@@ -5,7 +5,6 @@ vim.cmd([[
 	setlocal formatoptions+=t
 	setlocal linebreak
 	setlocal spell spelllang=en_us
-	setlocal textwidth=80
 	setlocal wrap
 	setlocal wrapmargin=0
 ]])
