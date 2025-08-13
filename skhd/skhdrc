@@ -12,6 +12,7 @@ alt - s : "${HOME}"/.config/scripts/choose/sleep.sh
 alt - n : "${HOME}"/.config/scripts/choose/notes.sh
 alt - p : "${HOME}"/.config/scripts/choose/process.sh
 shift +  alt - space : "${HOME}"/.config/scripts/stuff/yabai-float.sh
+shift +  alt - n : yabai -m window --resize right:$((275 - $(yabai -m query --windows --window | jq '.frame.w'))):0
 
 # change spaces
 alt - left : yabai -m space --focus prev

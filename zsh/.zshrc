@@ -19,8 +19,9 @@ PROMPT='%F{cyan}%B%2~%b%f${vcs_info_msg_0_:+ ${vcs_info_msg_0_}} $ '
 # --- Startup ---
 nerdfetch
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t home || tmux new-session -s home
+    tmux attach-session -t home || tmux new-session -s home
 fi
+
 
 # --- History ---
 HISTFILE=$HOME/.zhistory
