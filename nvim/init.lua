@@ -16,6 +16,7 @@ o.smartindent = true
 o.clipboard = "unnamedplus"
 o.swapfile = false
 o.undofile = true
+o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 o.ignorecase = true
 o.smartcase = true
@@ -73,11 +74,8 @@ m("n", "<leader>lf", function()
     vim.lsp.buf.format()
 end)
 m("n", "<leader>m", "<CMD>Mason<CR>")
-m("n", "<leader>o", "<CMD>update<CR><CMD>source<CR>")
-m("n", "<leader>pc", funcs.pack_clean)
+-- m("n", "<leader>pc", funcs.pack_clean)
 m("n", "<leader>pg", funcs.pack_get)
 m("n", "<leader>pu", vim.pack.update)
 m("n", "<leader>s", [[<CMD>%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-m("n", "<leader>v", "<CMD>e $MYVIMRC<CR>")
-m("n", "<leader>w", "<CMD>write<CR>")
 m("n", "<leader>x", "<CMD>!chmod +x %<CR>", { silent = true })
