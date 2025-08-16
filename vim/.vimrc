@@ -10,6 +10,7 @@ set noswapfile
 set tabstop=4
 set termguicolors
 set wrapmargin=0
+set clipboard=unnamedplus
 
 syntax on
 colorscheme rosepine
