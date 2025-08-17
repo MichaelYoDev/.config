@@ -12,7 +12,9 @@ o.tabstop = 4
 o.shiftwidth = 4
 o.expandtab = true
 o.smartindent = true
+o.wrap = false
 
+o.clipboard = "unnamedplus"
 o.swapfile = false
 o.undofile = true
 o.undodir = os.getenv('HOME') .. '/.vim/undodir'
@@ -75,5 +77,5 @@ m('n', '<leader>lf', function()
 end)
 m('n', '<leader>m', '<CMD>Mason<CR>')
 m('n', '<leader>pu', vim.pack.update)
-m('n', '<leader>zz', '<CMD>NoNeckPain<CR>')
+m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 m({ 'n', 'v' }, '<leader>c', '1z=') -- btw this fixes spelling for word under cursor
