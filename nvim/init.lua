@@ -1,5 +1,6 @@
 -- SET =========================================================================
 local o = vim.opt
+o.cursorline = true
 o.guicursor = ''
 o.number = true
 o.relativenumber = true
@@ -8,16 +9,17 @@ o.signcolumn = 'yes'
 o.termguicolors = true
 o.winborder = 'rounded'
 
-o.tabstop = 4
-o.shiftwidth = 4
 o.expandtab = true
+o.shiftwidth = 4
 o.smartindent = true
+o.softtabstop = 4
+o.tabstop = 4
 o.wrap = false
 
 o.clipboard = "unnamedplus"
 o.swapfile = false
+o.undodir = os.getenv('HOME') .. '/.vim/undodir//'
 o.undofile = true
-o.undodir = os.getenv('HOME') .. '/.vim/undodir'
 
 o.ignorecase = true
 o.smartcase = true
@@ -25,8 +27,8 @@ o.smartcase = true
 o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
 
 -- LSP =========================================================================
-vim.lsp.enable({ 'bashls', 'cssls', 'gopls', 'html', 'jdtls', 'lua_ls', 'markdown_oxide', 'pylsp', 'rust_analyzer',
-    'tinymist', 'ts_ls' })
+vim.lsp.enable({ 'bashls', 'cssls', 'gopls', 'harper_ls', 'html', 'jdtls', 'lua_ls', 'markdown_oxide', 'pylsp',
+    'rust_analyzer', 'tinymist', 'ts_ls' })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp-config', { clear = true }),
@@ -46,7 +48,7 @@ vim.pack.add({
     { src = 'https://github.com/mason-org/mason.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter',          version = 'main' },
     { src = 'https://github.com/rose-pine/neovim' },
-    { src = 'http ://github.com/shortcuts/no-neck-pain.nvim',              version = 'main' },
+    { src = 'https://github.com/shortcuts/no-neck-pain.nvim',              version = 'main' },
     { src = 'https://github.com/stevearc/oil.nvim' },
 })
 
@@ -67,15 +69,19 @@ local snippets = require('snippets')
 vim.g.mapleader = ' '
 
 local m = vim.keymap.set
+
 m('i', '<C-e>', snippets.expand_snippet)
+
 m('n', '<leader>e', '<CMD>Oil<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
-m('n', '<leader>lf', function()
-    vim.cmd([[%s/\s\+$//e]])
-    vim.lsp.buf.format()
-end)
+m('n', '<leader>lf', vim.lsp.buf.format)
+m('n', "<leader>ls", [[:%s/\s\+$//e<CR>]])
 m('n', '<leader>m', '<CMD>Mason<CR>')
 m('n', '<leader>pu', vim.pack.update)
 m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
+
 m({ 'n', 'v' }, '<leader>c', '1z=') -- btw this fixes spelling for word under cursor
+
+m({ "n", "x", "v" }, "j", "gj")
+m({ "n", "x", "v" }, "k", "gk")
