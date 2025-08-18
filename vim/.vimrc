@@ -1,16 +1,31 @@
 let mapleader = " "
+
 set guicursor=
-set linebreak
 set number
 set relativenumber
 set scrolloff=8
-set shiftwidth=4
 set signcolumn=yes
-set noswapfile
+set mouse=a
+
+set expandtab
+set shiftwidth=4
+set smartindent
+set softtabstop=4
 set tabstop=4
-set termguicolors
+
+set linebreak
+set spell spelllang=en_us
+set wrap
 set wrapmargin=0
+
 set clipboard=unnamedplus
+set noswapfile
+
+set ignorecase
+set smartcase
+
+map j gj
+map k gk
 
 syntax on
 colorscheme rosepine
