@@ -21,8 +21,8 @@ o.ignorecase = true
 o.smartcase = true
 
 -- MARKDOWN ====================================================================
-vim.keymap.set({ "n", "x", "v" }, "j", "gj", { buffer = 0 })
-vim.keymap.set({ "n", "x", "v" }, "k", "gk", { buffer = 0 })
+vim.keymap.set({ "n", "x", "v" }, "j", "gj")
+vim.keymap.set({ "n", "x", "v" }, "k", "gk")
 
 o.formatoptions:append("t")
 o.linebreak = true
