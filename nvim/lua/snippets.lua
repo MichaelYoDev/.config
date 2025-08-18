@@ -35,36 +35,34 @@ local ft_snippets = {
         {
             trigger = "mla",
             body = [[
-
 #set page(
     paper: "us-letter",
     header: context align(right)[Oliveira #counter(page).get().first()],
-    margin: 1in
-  )
+    margin: 1in,
+)
 
 #set text(
     size: 12pt,
-    font: "Times Newer Roman"
+    font: "Times New Roman",
 )
 
 #set par(
     first-line-indent: (amount: 0.5in, all: true),
-    justify: false, 
-    leading: 2em,
-    spacing: 2em 
+    justify: false,
+    leading: 1.625em,
+    spacing: 1.625em,
 )
 
-Michael Oliveira
+#align(left, stack(
+    dir: ttb,
+    spacing: 2em,
+    "Michael Oliveira",
+    "Teacher McTeacherson",
+    "Class 123",
+    datetime.today().display("[day] [month repr:long] [year repr:full] "),
+))
 
-Teacher McTeacherson
-
-Class 123
-
-#datetime.today().display("[year repr:full] [month repr:long] [day]")
-
-#align(center)[
-    ${1}
-]
+#align(center)[${1}]
 
 ${2}
 ]],
