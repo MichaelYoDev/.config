@@ -4,11 +4,20 @@ My personal macOS rice!
 
 ---
 
-## Previews
+## Images
 
-| ![space 1](/images/space1.png) | ![space 2](/images/space2.png) |
-|:-----------------------------:|:-----------------------------:|
-| ![choose picker gif](/images/chooseScriptsDemo.gif) | ![space 5](/images/space5.png) |
+<div align="center">
+    <table>
+        <tr>
+            <td><img src="/images/space1.png" width="400"></td>
+            <td><img src="/images/space2.png" width="400"></td>
+        </tr>
+        <tr>
+            <td><img src="/images/chooseScriptsDemo.gif" width="400"></td>
+            <td><img src="/images/keeb.png" width="400"></td>
+        </tr>
+    </table>
+</div>
 
 > [!NOTE]
 > Check out my [scripts](https://github.com/MichaelYoDev/scripts) repo!
@@ -28,6 +37,6 @@ My personal macOS rice!
 | Media Player      | [mpv](https://mpv.io) |
 | PDF Viewer        | [Zathura](https://pwmt.org/projects/zathura/) |
 | Multiplexer       | [tmux](https://github.com/tmux/tmux) |
-| System Info       | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| System Info       | [NerdFetch](https://github.com/ThatOneCalculator/NerdFetch) |
 | Theme             | [rosepine](https://rosepinetheme.com/) |
 | Keyboard          | [Corne 4.1](https://github.com/foostan/crkbd) |
