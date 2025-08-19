@@ -3,7 +3,6 @@ let mapleader = " "
 set guicursor=
 set number
 set relativenumber
-set scrolloff=8
 set signcolumn=yes
 set mouse=a
 

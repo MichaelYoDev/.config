@@ -17,7 +17,7 @@ macos-icon = holographic
 macos-window-shadow = false
 macos-titlebar-style = hidden
 
-window-padding-x = 4
+window-padding-x = 8
 window-padding-y = 8
 
 quit-after-last-window-closed = true
