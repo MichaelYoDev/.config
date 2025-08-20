@@ -70,7 +70,7 @@ ${2}
     },
 }
 
-function M.expand_snippet()
+function M.expand()
     local row, col = unpack(vim.api.nvim_win_get_cursor(0))
     local line = vim.api.nvim_get_current_line()
     local trigger = line:sub(1, col):match("(%w+)$")

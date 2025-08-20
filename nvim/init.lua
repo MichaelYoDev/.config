@@ -16,7 +16,7 @@ o.softtabstop = 4
 o.tabstop = 4
 o.wrap = false
 
-o.clipboard = "unnamedplus"
+o.clipboard = 'unnamedplus'
 o.swapfile = false
 o.undodir = os.getenv('HOME') .. '/.vim/undodir//'
 o.undofile = true
@@ -54,34 +54,30 @@ vim.pack.add({
 
 require('mason').setup()
 require('mini.icons').setup()
-require('mini.pairs').setup()
 require('mini.pick').setup()
-require('mini.surround').setup()
 require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob: ' } } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
 require('rose-pine').setup({ styles = { transparency = true } })
 vim.cmd.colorscheme('rose-pine')
 
--- LOCAL =======================================================================
-local snippets = require('snippets')
-
 -- KEYMAPS =====================================================================
 vim.g.mapleader = ' '
 
 local m = vim.keymap.set
+local snippets = require('snippets')
 
-m('i', '<C-e>', snippets.expand_snippet)
+m('i', '<C-e>', snippets.expand)
 
 m('n', '<leader>e', '<CMD>Oil<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
 m('n', '<leader>lf', vim.lsp.buf.format)
-m('n', "<leader>ls", [[:%s/\s\+$//e<CR>]])
+m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]])
 m('n', '<leader>m', '<CMD>Mason<CR>')
 m('n', '<leader>pu', vim.pack.update)
 m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 
 m({ 'n', 'v' }, '<leader>c', '1z=') -- btw this fixes spelling for word under cursor
 
-m({ "n", "x", "v" }, "j", "gj")
-m({ "n", "x", "v" }, "k", "gk")
+m({ 'n', 'x', 'v' }, 'j', 'gj')
+m({ 'n', 'x', 'v' }, 'k', 'gk')
