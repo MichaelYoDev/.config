@@ -4,15 +4,15 @@ shift + lctrl + alt - r : "${HOME}"/.config/scripts/stuff/yabai-start.sh
 # SCRIPTS
 alt - space : "${HOME}"/.config/scripts/choose/script-picker.sh
 alt - return : "${HOME}"/.config/scripts/term/open-term.sh
-alt - e : "${HOME}"/.config/scripts/choose/emoji.sh
 alt - a : "${HOME}"/.config/scripts/choose/apps-picker.sh
-alt - w : "${HOME}"/.config/scripts/choose/wallpapers.sh
 alt - c : "${HOME}"/.config/scripts/choose/cam.sh
-alt - s : "${HOME}"/.config/scripts/choose/sleep.sh
+alt - e : "${HOME}"/.config/scripts/choose/emoji.sh
 alt - n : "${HOME}"/.config/scripts/choose/notes.sh
 alt - p : "${HOME}"/.config/scripts/choose/process.sh
+alt - s : "${HOME}"/.config/scripts/choose/sleep.sh
+alt - w : "${HOME}"/.config/scripts/choose/wallpapers.sh
 shift +  alt - space : "${HOME}"/.config/scripts/stuff/yabai-float.sh
-shift +  alt - n : yabai -m window --warp west; yabai -m window --resize right:$((275 - $(yabai -m query --windows --window | jq '.frame.w'))):0
+shift +  alt - n : yabai -m window --warp west; yabai -m window --resize right:$((335 - $(yabai -m query --windows --window | jq '.frame.w'))):0
 
 # change spaces
 alt - left : yabai -m space --focus prev
