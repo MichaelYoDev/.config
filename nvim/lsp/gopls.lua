@@ -1,3 +1,9 @@
+---@brief
+---
+--- https://github.com/golang/tools/tree/master/gopls
+---
+--- Google's lsp server for golang.
+
 --- @class go_dir_custom_args
 ---
 --- @field envvar_id string
@@ -79,6 +85,7 @@ local function get_root_dir(fname)
     return vim.fs.root(fname, 'go.work') or vim.fs.root(fname, 'go.mod') or vim.fs.root(fname, '.git')
 end
 
+---@type vim.lsp.Config
 return {
     cmd = { 'gopls' },
     filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },

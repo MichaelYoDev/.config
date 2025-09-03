@@ -42,19 +42,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- PLUGINS =====================================================================
 vim.pack.add({
-    { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
-    { src = 'https://github.com/echasnovski/mini.nvim' },
-    { src = 'https://github.com/mason-org/mason.nvim' },
+    { src = 'https://github.com/mason-org/mason.nvim',                     version = 'v1.0.0' },
+    { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter',          version = 'main' },
-    { src = 'https://github.com/rose-pine/neovim' },
+    { src = 'https://github.com/rose-pine/neovim',                         name = 'rose-pine' },
     { src = 'https://github.com/shortcuts/no-neck-pain.nvim',              version = 'main' },
     { src = 'https://github.com/stevearc/oil.nvim' },
 })
 
 require('mason').setup()
-require('mini.icons').setup()
-require('mini.pick').setup()
 require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob: ' } } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
 require('rose-pine').setup({ styles = { transparency = true } })
@@ -69,15 +66,9 @@ local snippets = require('snippets')
 m('i', '<C-e>', snippets.expand)
 
 m('n', '<leader>e', '<CMD>Oil<CR>')
-m('n', '<leader>f', '<CMD>Pick files<CR>')
-m('n', '<leader>h', '<CMD>Pick help<CR>')
-m('n', '<leader>lf', vim.lsp.buf.format)
-m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]])
-m('n', '<leader>m', '<CMD>Mason<CR>')
-m('n', '<leader>pu', vim.pack.update)
+m('n', '<leader>f', vim.lsp.buf.format)
+m('n', '<leader>s', [[:%s/\s\+$//e<CR>]])
 m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
-
-m({ 'n', 'v' }, '<leader>c', '1z=') -- btw this fixes spelling for word under cursor
 
 m({ 'n', 'x', 'v' }, 'j', 'gj')
 m({ 'n', 'x', 'v' }, 'k', 'gk')

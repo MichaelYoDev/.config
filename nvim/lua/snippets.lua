@@ -20,7 +20,7 @@ local ft_snippets = {
         { trigger = "info", body = "> [!INFO]\n> ${1}" },
         { trigger = "tip",  body = "> [!TIP]\n> ${1}" },
         { trigger = "note", body = "> [!NOTE]\n> ${1}" },
-        { trigger = "link", body = "[${1}](${2})" },
+        { trigger = "link", body = "[${1:alt text}](${2:link})" },
         { trigger = "img",  body = "![${1:alt text}](${2:path/to/image.png})" },
         {
             trigger = "table",
