@@ -64,7 +64,7 @@ local ft_snippets = {
 
 #align(center)[${1}]
 
-${2}
+
 ]],
         },
     },

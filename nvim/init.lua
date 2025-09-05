@@ -42,7 +42,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- PLUGINS =====================================================================
 vim.pack.add({
+    { src = 'https://github.com/adriankarlen/plugin-view.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
+    { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/mason-org/mason.nvim',                     version = 'v1.0.0' },
     { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter',          version = 'main' },
@@ -52,8 +54,10 @@ vim.pack.add({
 })
 
 require('mason').setup()
+require('mini.pick').setup()
 require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob: ' } } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
+require('render-markdown').setup({ file_types = { 'markdown' } })
 require('rose-pine').setup({ styles = { transparency = true } })
 vim.cmd.colorscheme('rose-pine')
 
@@ -66,9 +70,13 @@ local snippets = require('snippets')
 m('i', '<C-e>', snippets.expand)
 
 m('n', '<leader>e', '<CMD>Oil<CR>')
-m('n', '<leader>f', vim.lsp.buf.format)
-m('n', '<leader>s', [[:%s/\s\+$//e<CR>]])
+m('n', '<leader>f', '<CMD>Pick files<CR>')
+m('n', '<leader>h', '<CMD>Pick help<CR>')
 m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
+
+m('n', '<leader>lf', vim.lsp.buf.format)
+m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]])
+m('n', '<leader>p', function() require('plugin-view').open() end)
 
 m({ 'n', 'x', 'v' }, 'j', 'gj')
 m({ 'n', 'x', 'v' }, 'k', 'gk')
