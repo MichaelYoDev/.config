@@ -30,32 +30,34 @@ o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
 vim.lsp.enable({ 'bashls', 'cssls', 'gopls', 'harper_ls', 'html', 'jdtls', 'lua_ls', 'markdown_oxide', 'pylsp',
     'rust_analyzer', 'tinymist', 'ts_ls' })
 
+
 vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('lsp-config', { clear = true }),
-    callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    group = vim.api.nvim_create_augroup('my.lsp', {}),
+    callback = function(args)
+        local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
         if client:supports_method('textDocument/completion') then
-            vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+            -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+            local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+            client.server_capabilities.completionProvider.triggerCharacters = chars
+            vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
         end
     end,
 })
 
 -- PLUGINS =====================================================================
 vim.pack.add({
-    { src = 'https://github.com/adriankarlen/plugin-view.nvim' },
+    { src = 'https://github.com/brianhuster/live-preview.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
-    { src = 'https://github.com/nvim-mini/mini.nvim' },
-    { src = 'https://github.com/mason-org/mason.nvim',                     version = 'v1.0.0' },
+    { src = 'https://github.com/mason-org/mason.nvim' },
     { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
+    { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter',          version = 'main' },
     { src = 'https://github.com/rose-pine/neovim',                         name = 'rose-pine' },
-    { src = 'https://github.com/shortcuts/no-neck-pain.nvim',              version = 'main' },
     { src = 'https://github.com/stevearc/oil.nvim' },
 })
 
 require('mason').setup()
 require('mini.pick').setup()
-require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob: ' } } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
 require('render-markdown').setup({ file_types = { 'markdown' } })
 require('rose-pine').setup({ styles = { transparency = true } })
@@ -74,9 +76,12 @@ m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
 m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 
+m('n', '<leader>ps', '<CMD>LivePreview start<CR>')
+m('n', '<leader>pc', '<CMD>LivePreview close<CR>')
+
 m('n', '<leader>lf', vim.lsp.buf.format)
-m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]])
-m('n', '<leader>p', function() require('plugin-view').open() end)
+m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]], { silent = true })
+m('n', '<leader>s', '1z=')
 
 m({ 'n', 'x', 'v' }, 'j', 'gj')
 m({ 'n', 'x', 'v' }, 'k', 'gk')
