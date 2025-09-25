@@ -43,6 +43,5 @@ sbar.add("bracket", { "/space\\.\\d*/" }, {
 		color = colors.transparent,
         border_color = colors.bg2,
         border_width = 2,
-		height = 28,
 	},
 })

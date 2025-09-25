@@ -28,7 +28,9 @@ set guioptions ""
 
 # zathurarc-dark
 set font "jetbrainsmono nerd font 15"
-set default-bg "rgba(31, 29, 46, .9)"
+# set default-bg "rgba(31, 29, 46, .9)" # transparent
+set default-bg "#1f1d2e"
+
 set default-fg "#e0def4"        # text
 
 set statusbar-fg "#908caa"      # foam

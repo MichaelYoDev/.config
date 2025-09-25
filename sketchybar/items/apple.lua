@@ -9,8 +9,8 @@ local apple = sbar.add("item", {
 	icon = {
 		font = { size = 16.0 },
 		string = icons.apple,
-		padding_right = 8,
-		padding_left = 8,
+		padding_right = 6,
+		padding_left = 6,
 	},
 	label = { drawing = false },
 	background = {
@@ -27,7 +27,7 @@ local apple = sbar.add("item", {
 sbar.add("bracket", { apple.name }, {
 	background = {
 		color = colors.transparent,
-		height = 30,
+		height = 26,
 		border_color = colors.grey,
 	},
 })
