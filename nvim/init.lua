@@ -83,5 +83,7 @@ m('n', '<leader>lf', vim.lsp.buf.format)
 m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]], { silent = true })
 m('n', '<leader>s', '1z=')
 
+m('n', '<C-f>', function() vim.fn.system('~/.config/scripts/term/tmux-sessionizer.sh') end, { silent = true })
+
 m({ 'n', 'x', 'v' }, 'j', 'gj')
 m({ 'n', 'x', 'v' }, 'k', 'gk')
