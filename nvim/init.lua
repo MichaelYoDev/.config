@@ -36,7 +36,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
         local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
         if client:supports_method('textDocument/completion') then
-            -- Optional: trigger autocompletion on EVERY keypress. May be slow!
             local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
             client.server_capabilities.completionProvider.triggerCharacters = chars
             vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
@@ -74,7 +73,6 @@ m('i', '<C-e>', snippets.expand)
 m('n', '<leader>e', '<CMD>Oil<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
-m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 
 m('n', '<leader>ps', '<CMD>LivePreview start<CR>')
 m('n', '<leader>pc', '<CMD>LivePreview close<CR>')
@@ -82,8 +80,6 @@ m('n', '<leader>pc', '<CMD>LivePreview close<CR>')
 m('n', '<leader>lf', vim.lsp.buf.format)
 m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]], { silent = true })
 m('n', '<leader>s', '1z=')
-
-m('n', '<C-f>', function() vim.fn.system('~/.config/scripts/term/tmux-sessionizer.sh') end, { silent = true })
 
 m({ 'n', 'x', 'v' }, 'j', 'gj')
 m({ 'n', 'x', 'v' }, 'k', 'gk')
