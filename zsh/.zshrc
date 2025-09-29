@@ -33,7 +33,7 @@ bindkey '^[[B' history-substring-search-down
 
 # Aliases ======================================================================
 alias vi="nvim"
-alias eza="eza -lh --group-directories-first --icons=auto" # cuz its funny
+alias ls="eza -lh --group-directories-first --icons=auto" # cuz its funny
 
 # Tmux =========================================================================
 export PATH=$PATH:/Users/michaeloliveira/.config/scripts/term
