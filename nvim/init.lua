@@ -53,19 +53,11 @@ vim.pack.add({
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter',          version = 'main' },
     { src = 'https://github.com/rose-pine/neovim',                         name = 'rose-pine' },
     { src = 'https://github.com/stevearc/oil.nvim' },
-    --
 })
 
 require('mason').setup()
 require('mini.pick').setup()
--- require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
-require("oil").setup({
-    columns = {},
-    lsp_file_methods = { autosave_changes = true },
-    view_options = { show_hidden = true },
-    float = { max_width = 0.7, max_height = 0.6, border = "rounded" },
-})
-
+require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
 require('render-markdown').setup({ file_types = { 'markdown' } })
 require('rose-pine').setup({ styles = { transparency = true } })
 vim.cmd.colorscheme('rose-pine')
@@ -78,8 +70,7 @@ local snippets = require('snippets')
 
 m('i', '<C-e>', snippets.expand)
 
--- m('n', '<leader>e', '<CMD>Oil<CR>')
-m('n', '<leader>e', require("oil").open_float)
+m('n', '<leader>e', '<CMD>Oil<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
 
