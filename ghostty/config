@@ -1,9 +1,8 @@
 theme = light:Rose Pine Dawn,dark:Rose Pine
-background = 1f1d2e
 background-blur = true
 background-opacity = 1
 
-font-family = JetBrainsMono Nerd Font
+font-family = CaskaydiaCove Nerd Font
 font-size = 14
 
 cursor-style = block

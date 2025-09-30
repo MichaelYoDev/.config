@@ -27,8 +27,8 @@ o.smartcase = true
 o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
 
 -- LSP =========================================================================
-vim.lsp.enable({ 'bashls', 'cssls', 'gopls', 'harper_ls', 'html', 'jdtls', 'lua_ls', 'markdown_oxide', 'pylsp',
-    'rust_analyzer', 'tinymist', 'ts_ls' })
+vim.lsp.enable({ 'bashls', 'cssls', 'gopls', 'harper_ls', 'html', 'jdtls', 'lua_ls', 'pylsp', 'rust_analyzer', 'tinymist',
+    'ts_ls' })
 
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -52,11 +52,13 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter',          version = 'main' },
     { src = 'https://github.com/rose-pine/neovim',                         name = 'rose-pine' },
+    { src = 'https://github.com/shortcuts/no-neck-pain.nvim',              version = 'main' },
     { src = 'https://github.com/stevearc/oil.nvim' },
 })
 
 require('mason').setup()
 require('mini.pick').setup()
+require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob: ' } } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
 require('render-markdown').setup({ file_types = { 'markdown' } })
 require('rose-pine').setup({ styles = { transparency = true } })
@@ -73,6 +75,7 @@ m('i', '<C-e>', snippets.expand)
 m('n', '<leader>e', '<CMD>Oil<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
+m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 
 m('n', '<leader>ps', '<CMD>LivePreview start<CR>')
 m('n', '<leader>pc', '<CMD>LivePreview close<CR>')
