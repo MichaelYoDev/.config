@@ -66,8 +66,7 @@ yabai -m rule --add label="mpv" app="^mpv$" manage=off
 
 # ===== Signals ================================
 
-# borders style=round active_color="gradient(top_left=0xff9ccfd8,bottom_right=0xffebbcba)" inactive_color=0xff6e6a86 width=3.0 hidpi=off order=a &
-borders style=round active_color="glow(0xff9ccfd8)" inactive_color=0xff6e6a86 width=3.0 hidpi=off order=a style=round &
+borders style=round active_color="gradient(top_left=0xff9ccfd8,bottom_right=0xffebbcba)" inactive_color=0xff6e6a86 width=3.0 hidpi=off order=a style=round &
 
 set +x
 printf "yabai: configuration loaded...\\n"
