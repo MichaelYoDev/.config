@@ -48,19 +48,21 @@ vim.pack.add({
     { src = 'https://github.com/brianhuster/live-preview.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
     { src = 'https://github.com/mason-org/mason.nvim' },
+    { src = 'https://github.com/adriankarlen/plugin-view.nvim' },
     { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter',          version = 'main' },
     { src = 'https://github.com/rose-pine/neovim',                         name = 'rose-pine' },
     { src = 'https://github.com/shortcuts/no-neck-pain.nvim',              version = 'main' },
     { src = 'https://github.com/stevearc/oil.nvim' },
+    { src = 'https://github.com/szymonwilczek/vim-be-better' },
 })
 
 require('mason').setup()
 require('mini.pick').setup()
 require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob: ' } } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
-require('render-markdown').setup({ file_types = { 'markdown' } })
+require('plugin-view').setup()
 require('rose-pine').setup({ styles = { transparency = true } })
 vim.cmd.colorscheme('rose-pine')
 
@@ -71,18 +73,21 @@ local m = vim.keymap.set
 local snippets = require('snippets')
 
 m('i', '<C-e>', snippets.expand)
+m('n', '<C-f>', '<CMD>Open .<CR>')
 
 m('n', '<leader>e', '<CMD>Oil<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
-m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
-
-m('n', '<leader>ps', '<CMD>LivePreview start<CR>')
 m('n', '<leader>pc', '<CMD>LivePreview close<CR>')
+m('n', '<leader>ps', '<CMD>LivePreview start<CR>')
+m('n', '<leader>pv', function() require("plugin-view").open() end)
+m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 
 m('n', '<leader>lf', vim.lsp.buf.format)
 m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]], { silent = true })
-m('n', '<leader>s', '1z=')
+
+m('x', '<leader>p', '"_dP')
+m({ 'n', 'v' }, '<leader>d', '"_d')
 
 m({ 'n', 'x', 'v' }, 'j', 'gj')
 m({ 'n', 'x', 'v' }, 'k', 'gk')
