@@ -38,5 +38,5 @@ My personal macOS rice!
 | PDF Viewer        | [Zathura](https://pwmt.org/projects/zathura/) |
 | Multiplexer       | [tmux](https://github.com/tmux/tmux) |
 | System Info       | [NerdFetch](https://github.com/ThatOneCalculator/NerdFetch) |
-| Theme             | [Rosé Pine](https://rosepinetheme.com/) |
+| Theme             | [Everforest](https://everforest.vercel.app/) |
 | Keyboard          | [Corne 4.1](https://github.com/foostan/crkbd) |

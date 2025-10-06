@@ -26,40 +26,83 @@ set scroll-step 5
 set zoom-min 10
 set guioptions ""
 
-# zathurarc-dark
-set font "jetbrainsmono nerd font 15"
-# set default-bg "rgba(31, 29, 46, .9)" # transparent
-set default-bg "#191724"        # bg
+# # rosepine ===================================================================
+# set font "cascaydiacove nerd font 15"
+# # set default-bg "rgba(31, 29, 46, .9)" # transparent
+# set default-bg "#191724"        # bg
+#
+# set default-fg "#e0def4"        # text
+#
+# set statusbar-fg "#908caa"      # foam
+# set statusbar-bg "#26233a"      # surface
+#
+# set inputbar-bg "#1f1d2e"       # base
+# set inputbar-fg "#e0def4"       # text
+#
+# set notification-error-bg "#eb6f92" # love
+# set notification-error-fg "#191724" # base
+#
+# set notification-warning-bg "#f6c177"   # gold
+# set notification-warning-fg "#191724"   # base
+#
+# set highlight-color "#f6c177"           # gold
+# set highlight-active-color "#31748f"    # iris
+#
+# set completion-highlight-fg "#191724"   # base
+# set completion-highlight-bg "#9ccfd8"   # foam (highlight variant)
+#
+# set completion-bg "#2a273f"     # overlay
+# set completion-fg "#e0def4"     # text
+#
+# set notification-bg "#31748f"   # iris
+# set notification-fg "#191724"   # base
+#
+# set recolor "true"
+# set recolor-lightcolor "rgba(31, 29, 46, 0)"  # base, transparent
+# set recolor-darkcolor "rgba(224, 222, 244, 1)" # text
+# set recolor-reverse-video "true"
+# set recolor-keephue "true"
 
-set default-fg "#e0def4"        # text
+# everforest ===================================================================
+set font "cascaydiacove nerd font 15"
 
-set statusbar-fg "#908caa"      # foam
-set statusbar-bg "#26233a"      # surface
+# Background and Foreground
+set default-bg "#1E2326"        # bg (hard)
+set default-fg "#d3c6aa"        # fg (text)
 
-set inputbar-bg "#1f1d2e"       # base
-set inputbar-fg "#e0def4"       # text
+# Statusbar
+set statusbar-fg "#a7c080"      # green (dimmed)
+set statusbar-bg "#3c474d"      # grey2 / surface
 
-set notification-error-bg "#eb6f92" # love
-set notification-error-fg "#191724" # base
+# Inputbar
+set inputbar-bg "#323c41"       # grey1 / base
+set inputbar-fg "#d3c6aa"       # fg
 
-set notification-warning-bg "#f6c177"   # gold
-set notification-warning-fg "#191724"   # base
+# Notification Colors
+set notification-error-bg "#e67e80"     # red
+set notification-error-fg "#2b3339"     # bg
 
-set highlight-color "#f6c177"           # gold
-set highlight-active-color "#31748f"    # iris
+set notification-warning-bg "#dbbc7f"   # yellow
+set notification-warning-fg "#2b3339"   # bg
 
-set completion-highlight-fg "#191724"   # base
-set completion-highlight-bg "#9ccfd8"   # foam (highlight variant)
+set notification-bg "#7fbbb3"           # aqua (used as info/iris equivalent)
+set notification-fg "#2b3339"           # bg
 
-set completion-bg "#2a273f"     # overlay
-set completion-fg "#e0def4"     # text
+# Highlights
+set highlight-color "#dbbc7f"           # yellow (used for soft highlight)
+set highlight-active-color "#7fbbb3"    # aqua (active highlight)
 
-set notification-bg "#31748f"   # iris
-set notification-fg "#191724"   # base
+# Completion Menu
+set completion-highlight-fg "#2b3339"   # bg
+set completion-highlight-bg "#a7c080"   # green
 
+set completion-bg "#3a454a"             # grey3 / overlay
+set completion-fg "#d3c6aa"             # fg
+
+# Recolor settings
 set recolor "true"
-set recolor-lightcolor "rgba(31, 29, 46, 0)"  # base, transparent
-set recolor-darkcolor "rgba(224, 222, 244, 1)" # text
+set recolor-lightcolor "rgba(43, 51, 57, 0)"     # transparent bg
+set recolor-darkcolor "rgba(211, 198, 170, 1)"   # fg (text)
 set recolor-reverse-video "true"
 set recolor-keephue "true"
 

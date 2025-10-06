@@ -38,8 +38,8 @@ yabai -m config auto_balance off
 
 yabai -m config window_shadow off
 yabai -m config window_opacity on
-yabai -m config normal_window_opacity 0.95
-yabai -m config active_window_opacity 0.95
+yabai -m config normal_window_opacity 0.90
+yabai -m config active_window_opacity 0.90
 
 
 yabai -m config insert_feedback_color 0xE09ccfd8
@@ -66,7 +66,11 @@ yabai -m rule --add label="mpv" app="^mpv$" manage=off
 
 # ===== Signals ================================
 
-borders style=round active_color="gradient(top_left=0xff9ccfd8,bottom_right=0xffebbcba)" inactive_color=0xff6e6a86 width=3.0 hidpi=off order=a style=round &
+# rosepine
+# borders style=round active_color="gradient(top_left=0xff9ccfd8,bottom_right=0xffebbcba)" inactive_color=0xff6e6a86 width=3.0 hidpi=off order=a style=round &
+
+# everforest hard
+borders style=round active_color=0xffD3C6AA inactive_color=0xff4F5B58 width=3.0 hidpi=off order=a style=round &
 
 set +x
 printf "yabai: configuration loaded...\\n"
