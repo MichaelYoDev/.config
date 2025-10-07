@@ -1,7 +1,5 @@
 local colors = require("colors")
 local sbar = require("sketchybar")
-local icons = require("icons")
-local settings = require("settings")
 
 -- get number of spaces for padding
 local handle = io.popen("yabai -m query --spaces | jq length")
