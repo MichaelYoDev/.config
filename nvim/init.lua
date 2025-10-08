@@ -54,7 +54,6 @@ vim.pack.add({
     { src = 'https://github.com/shortcuts/no-neck-pain.nvim',              version = 'main' },
     { src = 'https://github.com/stevearc/oil.nvim' },
     { src = 'https://github.com/szymonwilczek/vim-be-better' },
-    -- { src = 'https://github.com/rose-pine/neovim',                         name = 'rose-pine' },
 })
 
 require('mason').setup()
@@ -63,8 +62,6 @@ require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
 require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
 vim.cmd.colorscheme('everforest')
--- require('rose-pine').setup({ styles = { transparency = true } })
--- vim.cmd.colorscheme('rose-pine')
 
 -- KEYMAPS =====================================================================
 vim.g.mapleader = ' '
@@ -79,8 +76,6 @@ m('n', '<leader>e', '<CMD>Oil<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
 m('n', '<leader>g', '<CMD>Pick grep_live<CR>')
-m('n', '<leader>pc', '<CMD>LivePreview close<CR>')
-m('n', '<leader>ps', '<CMD>LivePreview start<CR>')
 m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 
 m('n', '<leader>lf', vim.lsp.buf.format)
