@@ -42,6 +42,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
+-- AUTOCOMANDS =================================================================
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("HighlightYank", {}),
+    pattern = "*",
+    callback = function()
+        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 50 })
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = vim.api.nvim_create_augroup("TrimWhitespace", {}),
+    pattern = "*",
+    command = [[%s/\s\+$//e]],
+})
+
 -- PLUGINS =====================================================================
 vim.pack.add({
     { src = 'https://github.com/brianhuster/live-preview.nvim' },
@@ -79,7 +94,6 @@ m('n', '<leader>g', '<CMD>Pick grep_live<CR>')
 m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 
 m('n', '<leader>lf', vim.lsp.buf.format)
-m('n', '<leader>ls', [[:%s/\s\+$//e<CR>]], { silent = true })
 
 m('x', '<leader>p', '"_dP')
 m({ 'n', 'v' }, '<leader>d', '"_d')
