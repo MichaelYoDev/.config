@@ -34,6 +34,7 @@ bindkey '^[[B' history-substring-search-down
 # Aliases ======================================================================
 alias vi="nvim"
 alias ls="ls -ACGp" # all files, columns, colors, "/" after directory
+alias tree="tree -aCL 2 --gitignore" # all files, colors, depth=2, gitignore
 
 # Tmux =========================================================================
 export PATH=$PATH:/Users/michaeloliveira/.config/scripts/term
