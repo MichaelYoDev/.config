@@ -13,7 +13,7 @@ shell-integration-features = no-cursor
 macos-window-shadow = false
 macos-titlebar-style = hidden
 
-window-padding-x = 4
-window-padding-y = 2
+window-padding-x = 10
+window-padding-y = 6
 
 quit-after-last-window-closed = true

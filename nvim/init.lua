@@ -59,22 +59,24 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- PLUGINS =====================================================================
 vim.pack.add({
+    -- { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
+    -- { src = 'https://github.com/shortcuts/no-neck-pain.nvim',     version = 'main' },
+    -- { src = 'https://github.com/szymonwilczek/vim-be-better' },
     { src = 'https://github.com/brianhuster/live-preview.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
     { src = 'https://github.com/mason-org/mason.nvim' },
-    { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
-    { src = 'https://github.com/neanias/everforest-nvim',                  name = 'everforest' },
+    { src = 'https://github.com/neanias/everforest-nvim',         name = 'everforest' },
     { src = 'https://github.com/nvim-mini/mini.nvim' },
-    { src = 'https://github.com/nvim-treesitter/nvim-treesitter',          version = 'main' },
-    { src = 'https://github.com/shortcuts/no-neck-pain.nvim',              version = 'main' },
+    { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+    { src = 'https://github.com/nvzone/showkeys' },
     { src = 'https://github.com/stevearc/oil.nvim' },
-    { src = 'https://github.com/szymonwilczek/vim-be-better' },
 })
 
 require('mason').setup()
 require('mini.pick').setup()
-require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob: ' } } })
+-- require('no-neck-pain').setup({ width = 130, buffers = { wo = { fillchars = 'eob: ' } } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
+require('showkeys').setup({ opts = { position = "bottom-right" } })
 require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
 vim.cmd.colorscheme('everforest')
 
@@ -91,7 +93,8 @@ m('n', '<leader>e', '<CMD>Oil<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
 m('n', '<leader>g', '<CMD>Pick grep_live<CR>')
-m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
+m('n', '<leader>s', '<CMD>ShowkeysToggle<CR>')
+-- m('n', '<leader>z', '<CMD>NoNeckPain<CR>')
 
 m('n', '<leader>lf', vim.lsp.buf.format)
 
