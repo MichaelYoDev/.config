@@ -14,7 +14,7 @@ zstyle ':vcs_info:git*' unstagedstr '%F{yellow}*%f'
 zstyle ':vcs_info:git*' stagedstr '%F{green}+%f'
 zstyle ':vcs_info:*:*' check-for-changes true
 
-PROMPT='%F{cyan}%B%2~%b%f${vcs_info_msg_0_:+ ${vcs_info_msg_0_}} $ '
+PROMPT='%F{green}%B%2~%b%f${vcs_info_msg_0_:+ ${vcs_info_msg_0_}} $ '
 
 # Startup ======================================================================
 nerdfetch
@@ -34,7 +34,6 @@ bindkey '^[[B' history-substring-search-down
 # Aliases ======================================================================
 alias vi="nvim"
 alias ls="ls -ACGp" # all files, columns, colors, "/" after directory
-alias tree="tree -aCL 2 --gitignore" # all files, colors, depth=2, gitignore
 
 # Tmux =========================================================================
 export PATH=$PATH:/Users/michaeloliveira/.config/scripts/term
