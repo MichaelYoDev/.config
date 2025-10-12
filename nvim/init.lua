@@ -58,16 +58,21 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- PLUGINS =====================================================================
+local stuff = require('stuff')
 vim.pack.add({
     { src = 'https://github.com/brianhuster/live-preview.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
+    { src = 'https://github.com/m4xshen/hardtime.nvim' },
     { src = 'https://github.com/neanias/everforest-nvim',         name = 'everforest' },
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
     { src = 'https://github.com/stevearc/oil.nvim' },
 })
 
+require('hardtime').setup()
+require('mini.icons').setup()
 require('mini.pick').setup()
+require('mini.statusline').setup({ content = { active = stuff.statuslineContent } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
 require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
 vim.cmd.colorscheme('everforest')
