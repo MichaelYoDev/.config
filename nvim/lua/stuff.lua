@@ -16,4 +16,36 @@ function M.statuslineContent()
     })
 end
 
+function M.markdown2pdf(input)
+    if not input or input == "" then
+        print("Usage: markdown2pdf(<file.md>)")
+        return
+    end
+
+    local f = io.open(input, "r")
+    if not f then
+        print("File not found: " .. input)
+        return
+    end
+    f:close()
+
+    local filename = input:match("([^/]+)%.md$")
+    if not filename then
+        print("Invalid input file (must end in .md)")
+        return
+    end
+
+    local home = os.getenv("HOME") or "~"
+    local output = home .. "/Downloads/" .. filename .. ".pdf"
+
+    local cmd = string.format('pandoc "%s" -o "%s" -V geometry:margin=1in', input, output)
+    local ok = os.execute(cmd)
+
+    if ok == 0 then
+        print("PDF saved to " .. output)
+    else
+        print("Conversion failed")
+    end
+end
+
 return M

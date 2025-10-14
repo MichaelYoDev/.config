@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
--- AUTOCOMANDS =================================================================
+-- AUTOCOMMANDS =================================================================
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("HighlightYank", {}),
     pattern = "*",
@@ -74,6 +74,7 @@ require('mini.icons').setup()
 require('mini.pick').setup()
 require('mini.statusline').setup({ content = { active = stuff.statuslineContent } })
 require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
+
 require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
 vim.cmd.colorscheme('everforest')
 

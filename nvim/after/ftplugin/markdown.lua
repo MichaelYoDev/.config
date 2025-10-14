@@ -4,4 +4,8 @@ vim.opt_local.spelllang = "en_us"
 vim.opt_local.wrap = true
 vim.opt_local.wrapmargin = 0
 
-vim.keymap.set('n', '<leader>mp', '<CMD>!bash ~/.config/scripts/term/markdown2pdf.sh %:p<CR>')
+local stuff = require('stuff')
+vim.keymap.set('n', '<leader>mp', function()
+    local input = vim.api.nvim_buf_get_name(0)
+    stuff.markdown2pdf(input)
+end)
