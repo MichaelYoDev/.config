@@ -1,0 +1,23 @@
+# view =========================================================================
+feed-sort-order unreadarticlecount-asc
+
+color info default default reverse
+color listnormal default default
+color listnormal_unread yellow default
+color listfocus green default reverse bold
+color listfocus_unread green default reverse bold
+
+# nav ==========================================================================
+goto-next-feed no
+
+browser "open -g -a 'Zen' %u"
+
+bind h everywhere quit
+bind j everywhere down
+bind k everywhere up
+bind l everywhere open
+bind q everywhere hard-quit
+unbind-key C feedlist
+
+# misc =========================================================================
+max-items 20

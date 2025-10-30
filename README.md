@@ -36,6 +36,7 @@ My personal macOS rice!
 | Browser           | [Zen Browser](https://zen-browser.app/) |
 | Media Player      | [mpv](https://mpv.io) |
 | PDF Viewer        | [Zathura](https://pwmt.org/projects/zathura/) |
+| RSS Viewer        | [Newsboat](https://newsboat.org/) |
 | Multiplexer       | [tmux](https://github.com/tmux/tmux) |
 | System Info       | [NerdFetch](https://github.com/ThatOneCalculator/NerdFetch) |
 | Theme             | [Everforest](https://everforest.vercel.app/) |
