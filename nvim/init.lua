@@ -67,6 +67,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
     { src = 'https://github.com/stevearc/oil.nvim' },
+    { src = 'https://github.com/szymonwilczek/vim-be-better' },
 })
 
 require('hardtime').setup()
