@@ -1,0 +1,13 @@
+{
+  "plugins": {
+    "everforest": [],
+    "hardtime.nvim": [],
+    "live-preview.nvim": [],
+    "mini.nvim": [],
+    "nvim-treesitter": {
+      "version": "'main'"
+    },
+    "typst-preview.nvim": [],
+    "vim-be-better": []
+  }
+}

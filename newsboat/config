@@ -20,4 +20,4 @@ bind q everywhere hard-quit
 unbind-key C feedlist
 
 # misc =========================================================================
-max-items 20
+max-items 15

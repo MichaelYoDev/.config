@@ -8,6 +8,7 @@ o.scrolloff = 8
 o.signcolumn = 'yes'
 o.termguicolors = true
 o.winborder = 'rounded'
+o.showmode = false -- when using statusline
 
 o.expandtab = true
 o.shiftwidth = 4
@@ -66,7 +67,7 @@ vim.pack.add({
     { src = 'https://github.com/neanias/everforest-nvim',         name = 'everforest' },
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
-    { src = 'https://github.com/stevearc/oil.nvim' },
+    -- { src = 'https://github.com/stevearc/oil.nvim' }, -- bloat?
     { src = 'https://github.com/szymonwilczek/vim-be-better' },
 })
 
@@ -74,7 +75,7 @@ require('hardtime').setup()
 require('mini.icons').setup()
 require('mini.pick').setup()
 require('mini.statusline').setup({ content = { active = stuff.statuslineContent } })
-require('oil').setup({ view_options = { show_hidden = true }, columns = {} })
+-- require('oil').setup({ view_options = { show_hidden = true }, columns = {} }) -- bloat?
 
 require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
 vim.cmd.colorscheme('everforest')
@@ -88,10 +89,12 @@ local snippets = require('snippets')
 m('i', '<C-e>', snippets.expand)
 m('n', '<C-f>', '<CMD>Open .<CR>')
 
-m('n', '<leader>e', '<CMD>Oil<CR>')
+-- m('n', '<leader>e', '<CMD>Oil<CR>') -- bloat?
+m('n', '<leader>e', '<CMD>Ex<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
 m('n', '<leader>g', '<CMD>Pick grep_live<CR>')
+m('n', '<Esc>', '<CMD>nohlsearch<CR>')
 
 m('n', '<leader>lf', vim.lsp.buf.format)
 
