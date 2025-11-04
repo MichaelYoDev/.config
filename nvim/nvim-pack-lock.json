@@ -1,7 +1,6 @@
 {
   "plugins": {
     "everforest": [],
-    "hardtime.nvim": [],
     "live-preview.nvim": [],
     "mini.nvim": [],
     "nvim-treesitter": {

@@ -8,7 +8,7 @@ o.scrolloff = 8
 o.signcolumn = 'yes'
 o.termguicolors = true
 o.winborder = 'rounded'
-o.showmode = false -- when using statusline
+o.showmode = false
 
 o.expandtab = true
 o.shiftwidth = 4
@@ -26,6 +26,7 @@ o.ignorecase = true
 o.smartcase = true
 
 o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
+
 
 -- LSP =========================================================================
 vim.lsp.enable({ 'bashls', 'cssls', 'gopls', 'harper_ls', 'html', 'jdtls', 'lua_ls', 'pylsp', 'rust_analyzer', 'tinymist',
@@ -59,26 +60,23 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- PLUGINS =====================================================================
-local stuff = require('stuff')
 vim.pack.add({
     { src = 'https://github.com/brianhuster/live-preview.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
-    { src = 'https://github.com/m4xshen/hardtime.nvim' },
     { src = 'https://github.com/neanias/everforest-nvim',         name = 'everforest' },
     { src = 'https://github.com/nvim-mini/mini.nvim' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
-    -- { src = 'https://github.com/stevearc/oil.nvim' }, -- bloat?
     { src = 'https://github.com/szymonwilczek/vim-be-better' },
 })
 
-require('hardtime').setup()
-require('mini.icons').setup()
 require('mini.pick').setup()
-require('mini.statusline').setup({ content = { active = stuff.statuslineContent } })
--- require('oil').setup({ view_options = { show_hidden = true }, columns = {} }) -- bloat?
 
 require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
 vim.cmd.colorscheme('everforest')
+
+vim.o.showtabline = 2
+vim.o.statusline = [[%!v:lua.require('stuff').MyStatusLine()]]
+vim.o.tabline= [[%!v:lua.require('stuff').BufferTabline()]]
 
 -- KEYMAPS =====================================================================
 vim.g.mapleader = ' '
@@ -89,7 +87,8 @@ local snippets = require('snippets')
 m('i', '<C-e>', snippets.expand)
 m('n', '<C-f>', '<CMD>Open .<CR>')
 
--- m('n', '<leader>e', '<CMD>Oil<CR>') -- bloat?
+m('n', '<leader>bd', ':bdelete<CR>')
+
 m('n', '<leader>e', '<CMD>Ex<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
