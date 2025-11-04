@@ -21,3 +21,4 @@ unbind-key C feedlist
 
 # misc =========================================================================
 max-items 15
+cleanup-on-quit yes
