@@ -27,6 +27,9 @@ o.smartcase = true
 
 o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
 
+o.showtabline = 2
+o.statusline = [[%!v:lua.require('stuff').MyStatusLine()]]
+o.tabline = [[%!v:lua.require('stuff').BufferTabline()]]
 
 -- LSP =========================================================================
 vim.lsp.enable({ 'bashls', 'cssls', 'gopls', 'harper_ls', 'html', 'jdtls', 'lua_ls', 'pylsp', 'rust_analyzer', 'tinymist',
@@ -87,9 +90,6 @@ require('mini.pick').setup()
 require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
 vim.cmd.colorscheme('everforest')
 
-vim.o.showtabline = 2
-vim.o.statusline = [[%!v:lua.require('stuff').MyStatusLine()]]
-vim.o.tabline = [[%!v:lua.require('stuff').BufferTabline()]]
 
 -- KEYMAPS =====================================================================
 vim.g.mapleader = ' '
