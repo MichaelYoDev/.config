@@ -30,7 +30,7 @@ o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
 
 -- LSP =========================================================================
 vim.lsp.enable({ 'bashls', 'cssls', 'gopls', 'harper_ls', 'html', 'jdtls', 'lua_ls', 'pylsp', 'rust_analyzer', 'tinymist',
-    'ts_ls' })
+    'tombi', 'ts_ls' })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('myLSP', {}),
@@ -59,6 +59,19 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     command = [[%s/\s\+$//e]],
 })
 
+vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function(args)
+        local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
+        local line_count = vim.api.nvim_buf_line_count(args.buf)
+        if mark[1] > 0 and mark[1] <= line_count then
+            vim.api.nvim_win_set_cursor(0, mark)
+            vim.schedule(function()
+                vim.cmd("normal! zz")
+            end)
+        end
+    end,
+})
+
 -- PLUGINS =====================================================================
 vim.pack.add({
     { src = 'https://github.com/brianhuster/live-preview.nvim' },
@@ -76,7 +89,7 @@ vim.cmd.colorscheme('everforest')
 
 vim.o.showtabline = 2
 vim.o.statusline = [[%!v:lua.require('stuff').MyStatusLine()]]
-vim.o.tabline= [[%!v:lua.require('stuff').BufferTabline()]]
+vim.o.tabline = [[%!v:lua.require('stuff').BufferTabline()]]
 
 -- KEYMAPS =====================================================================
 vim.g.mapleader = ' '
@@ -93,12 +106,8 @@ m('n', '<leader>e', '<CMD>Ex<CR>')
 m('n', '<leader>f', '<CMD>Pick files<CR>')
 m('n', '<leader>h', '<CMD>Pick help<CR>')
 m('n', '<leader>g', '<CMD>Pick grep_live<CR>')
-m('n', '<Esc>', '<CMD>nohlsearch<CR>')
 
 m('n', '<leader>lf', vim.lsp.buf.format)
 
 m('x', '<leader>p', '"_dP')
 m({ 'n', 'v' }, '<leader>d', '"_d')
-
-m({ 'n', 'x', 'v' }, 'j', 'gj')
-m({ 'n', 'x', 'v' }, 'k', 'gk')
