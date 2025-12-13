@@ -88,7 +88,7 @@ function M.MyStatusLine()
     local l, c, tot = vim.fn.line('.'), vim.fn.virtcol('.'), vim.fn.line('$')
     local pct       = tot > 0 and math.floor(l * 100 / tot) or 0
 
-    local left      = (' %s  %s '):format(mode_name, filepath)
+    local left      = (' %s | %s '):format(mode_name, filepath)
     local right     = table.concat({ ft, enc .. '[' .. fmt .. ']', size(), pct .. '%% ' .. tot, l .. ':' .. c }, ' │ ')
 
     return left .. '%=' .. right .. ' '

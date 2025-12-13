@@ -37,7 +37,8 @@ return {
     transparent = 0x00000000,
 
     bar = {
-        bg = 0xe61e2326,
+        -- bg = 0xe61e2326,
+        bg = 0xff1e2326,
         border = 0xff2e383c,
     },
 

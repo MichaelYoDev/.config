@@ -2,11 +2,13 @@
   "plugins": {
     "everforest": [],
     "live-preview.nvim": [],
-    "mini.nvim": [],
+    "mini.pick": {
+      "rev": "b435139",
+      "src": "https://github.com/nvim-mini/mini.pick"
+    },
     "nvim-treesitter": {
       "version": "'main'"
     },
-    "typst-preview.nvim": [],
-    "vim-be-better": []
+    "typst-preview.nvim": []
   }
 }

@@ -34,6 +34,12 @@ bindkey '^[[B' history-substring-search-down
 # Aliases ======================================================================
 alias vi="nvim"
 alias ls="ls -ACGp" # all files, columns, colors, "/" after directory
+alias micro='f() {
+  file="micro/$(date +%Y-%m-%d-%H%M).md"
+  hugo new "$file" >/dev/null
+  $EDITOR -c "normal! Gzzo" "content/$file"
+}; f' # type micro to make and open new microblog post
+alias deploy="~/.config/scripts/term/deploy.sh"
 
 # Tmux =========================================================================
 export PATH=$PATH:/Users/michaeloliveira/.config/scripts/term

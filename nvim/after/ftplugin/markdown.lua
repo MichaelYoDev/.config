@@ -9,3 +9,8 @@ vim.keymap.set('n', '<leader>mp', function()
     local input = vim.api.nvim_buf_get_name(0)
     stuff.markdown2pdf(input)
 end)
+
+
+vim.keymap.set({ "n", "x", "v" }, "j", "gj")
+vim.keymap.set({ "n", "x", "v" }, "k", "gk")
+
