@@ -1,14 +1,25 @@
 {
   "plugins": {
-    "everforest": [],
-    "live-preview.nvim": [],
+    "everforest": {
+      "rev": "d2936185a6d266def29fd7b523d296384580ef08",
+      "src": "https://github.com/neanias/everforest-nvim"
+    },
+    "live-preview.nvim": {
+      "rev": "35ddc5a99499d1d2f4adefb7e92d0c537353fdec",
+      "src": "https://github.com/brianhuster/live-preview.nvim"
+    },
     "mini.pick": {
       "rev": "b435139",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "nvim-treesitter": {
+      "rev": "de003000a287c501a6650a1ddd3be80ee34278d4",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
-    "typst-preview.nvim": []
+    "typst-preview.nvim": {
+      "rev": "dea4525d5420b7c32eebda7de15a6beb9d6574fa",
+      "src": "https://github.com/chomosuke/typst-preview.nvim"
+    }
   }
 }

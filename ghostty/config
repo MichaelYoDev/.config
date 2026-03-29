@@ -1,8 +1,11 @@
 theme = dark:Everforest Dark Hard,light:Everforest Light Med
 background-blur = true
 background-opacity = 1
+# background-opacity = .90
 
-font-family = CaskaydiaCove Nerd Font
+# font-family = CaskaydiaCove Nerd Font
+# font-size = 14
+font-family = Departure Mono
 font-size = 14
 
 cursor-style = block

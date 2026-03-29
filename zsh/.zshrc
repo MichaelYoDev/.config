@@ -34,6 +34,7 @@ bindkey '^[[B' history-substring-search-down
 # Aliases ======================================================================
 alias vi="nvim"
 alias ls="ls -ACGp" # all files, columns, colors, "/" after directory
+alias compress="caesiumclt --exif --keep-dates -o compressed/ -q 80 ."
 alias micro='f() {
   file="micro/$(date +%Y-%m-%d-%H%M).md"
   hugo new "$file" >/dev/null
