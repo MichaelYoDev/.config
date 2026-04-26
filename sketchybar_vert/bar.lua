@@ -15,6 +15,6 @@ sbar.bar({
     margin = 4,
     border_color = colors.bg2,
     border_width = 2,
-    corner_radius = 12,
+    corner_radius = 13,
 
 })
