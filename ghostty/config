@@ -13,6 +13,7 @@ cursor-style-blink = false
 mouse-hide-while-typing = true
 shell-integration-features = no-cursor
 
+macos-icon = glass
 macos-window-shadow = false
 macos-titlebar-style = hidden
 
