@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "auto-dark-mode.nvim": {
+      "rev": "54058b4fe414bd64bd2904a6f8a63f1f14e3d8df",
+      "src": "https://github.com/f-person/auto-dark-mode.nvim"
+    },
     "everforest": {
       "rev": "d2936185a6d266def29fd7b523d296384580ef08",
       "src": "https://github.com/neanias/everforest-nvim"

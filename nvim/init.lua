@@ -82,6 +82,7 @@ vim.pack.add({
     { src = 'https://github.com/neanias/everforest-nvim',         name = 'everforest' },
     { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+    { src = 'https://github.com/f-person/auto-dark-mode.nvim' }
 })
 
 require('mini.pick').setup()
