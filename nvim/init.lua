@@ -77,17 +77,19 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 -- PLUGINS =====================================================================
 vim.pack.add({
+    -- { src = 'https://github.com/neanias/everforest-nvim',         name = 'everforest' },
     { src = 'https://github.com/brianhuster/live-preview.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
-    { src = 'https://github.com/neanias/everforest-nvim',         name = 'everforest' },
+    { src = 'https://github.com/f-person/auto-dark-mode.nvim' },
     { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
-    { src = 'https://github.com/f-person/auto-dark-mode.nvim' }
+    { src = 'https://github.com/rose-pine/neovim',                name = 'rose-pine' },
 })
 
 require('mini.pick').setup()
-require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
-vim.cmd.colorscheme('everforest')
+-- require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
+-- vim.cmd.colorscheme('everforest')
+vim.cmd.colorscheme('rose-pine')
 
 -- KEYMAPS =====================================================================
 vim.g.mapleader = ' '

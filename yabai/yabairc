@@ -6,11 +6,11 @@ set -x
 
 declare -A gaps
 
-gaps["top"]="5"
-gaps["bottom"]="5"
-gaps["left"]="5"
-gaps["right"]="5"
-gaps["inner"]="6"
+gaps["top"]="6"
+gaps["bottom"]="6"
+gaps["left"]="6"
+gaps["right"]="6"
+gaps["inner"]="7"
 
 # ===== Loading Scripting Additions ============
 
@@ -69,9 +69,10 @@ yabai -m rule --add label="mpv" app="^mpv$" manage=off
 
 # rosepine
 # borders style=round active_color="gradient(top_left=0xff9ccfd8,bottom_right=0xffebbcba)" inactive_color=0xff6e6a86 width=3.0 hidpi=off order=a style=round &
+borders style=round active_color=0xffeb6f92 inactive_color=0xff6e6a86 width=3.0 hidpi=off order=a style=round &
 
 # everforest hard
-borders style=round active_color=0xffE67E80 inactive_color=0xff4F5B58 width=2 hidpi=off order=a style=round &
+# borders style=round active_color=0xffE67E80 inactive_color=0xff4F5B58 width=2 hidpi=off order=a style=round &
 
 set +x
 printf "yabai: configuration loaded...\\n"

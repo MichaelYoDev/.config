@@ -1,4 +1,5 @@
-theme = dark:Everforest Dark Hard,light:Everforest Light Med
+# theme = dark:Everforest Dark Hard,light:Everforest Light Med
+theme = dark:Rose Pine,light:Rose Pine Dawn
 background-blur = true
 background-opacity = 1
 # background-opacity = .90
