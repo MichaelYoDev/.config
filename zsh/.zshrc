@@ -41,6 +41,7 @@ alias micro='f() {
   $EDITOR -c "normal! Gzzo" "content/$file"
 }; f' # type micro to make and open new microblog post
 alias deploy="~/.config/scripts/term/deploy.sh"
+alias exif="~/.config/scripts/term/add-film-metadata.sh"
 
 # Tmux =========================================================================
 export PATH=$PATH:/Users/michaeloliveira/.config/scripts/term
@@ -49,3 +50,11 @@ bindkey -s ^f "tmux-sessionizer.sh\n"
 # Exports ======================================================================
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
+
+# pnpm
+export PNPM_HOME="/Users/michaeloliveira/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
