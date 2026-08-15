@@ -18,6 +18,7 @@ local cpu = sbar.add("graph", "widgets.cpu" , 42, {
   icon = { string = icons.cpu },
   label = {
     string = "cpu ??%",
+    color = colors.white,
     font = {
       family = settings.font.numbers,
       style = settings.font.style_map["Bold"],
@@ -58,9 +59,17 @@ cpu:subscribe("mouse.clicked", function(env)
 end)
 
 -- Background around the cpu item
-sbar.add("bracket", "widgets.cpu.bracket", { cpu.name }, {
+local cpu_bracket = sbar.add("bracket", "widgets.cpu.bracket", { cpu.name }, {
   background = { color = colors.bg1 }
 })
+
+cpu_bracket:subscribe("theme_change", function()
+  cpu_bracket:set({ background = { color = colors.bg1 } })
+end)
+
+cpu:subscribe("theme_change", function()
+  cpu:set({ label = { color = colors.white } })
+end)
 
 -- Background around the cpu item
 sbar.add("item", "widgets.cpu.padding", {

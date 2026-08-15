@@ -36,10 +36,16 @@ for i = 1, total_spaces do
 end
 
 -- add bracket around the spaces
-sbar.add("bracket", { "/space\\.\\d*/" }, {
+local spaces_bracket = sbar.add("bracket", { "/space\\.\\d*/" }, {
 	background = {
 		color = colors.transparent,
         border_color = colors.bg2,
         border_width = 2,
 	},
 })
+
+spaces_bracket:subscribe("theme_change", function()
+	spaces_bracket:set({
+		background = { border_color = colors.bg2 },
+	})
+end)

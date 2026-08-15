@@ -19,11 +19,13 @@ for i = 1, max_items, 1 do
     padding_left = settings.paddings,
     padding_right = settings.paddings,
     drawing = false,
+    updates = true,
     icon = { drawing = false },
     label = {
       font = {
         style = settings.font.style_map[i == 1 and "Black" or "Regular"]
       },
+      color = colors.white,
       padding_left = 6,
       padding_right = 6,
     },
@@ -33,7 +35,7 @@ for i = 1, max_items, 1 do
   menu_items[i] = menu
 end
 
-sbar.add("bracket", { '/menu\\..*/' }, {
+local menus_bracket = sbar.add("bracket", { '/menu\\..*/' }, {
   background = { color = colors.bg1 }
 })
 
@@ -46,10 +48,11 @@ local function update_menus(env)
   sbar.exec("$CONFIG_DIR/helpers/menus/bin/menus -l", function(menus)
     sbar.set('/menu\\..*/', { drawing = false })
     menu_padding:set({ drawing = true })
+    menus_bracket:set({ background = { color = colors.bg1 } })
     id = 1
     for menu in string.gmatch(menus, '[^\r\n]+') do
       if id < max_items then
-        menu_items[id]:set( { label = menu, drawing = true } )
+        menu_items[id]:set( { label = { string = menu, color = colors.white }, drawing = true } )
       else break end
       id = id + 1
     end
@@ -71,6 +74,16 @@ space_menu_swap:subscribe("swap_menus_and_spaces", function(env)
     sbar.set("front_app", { drawing = false })
     update_menus()
   end
+end)
+
+for _, menu in ipairs(menu_items) do
+  menu:subscribe("theme_change", function()
+    menu:set({ label = { color = colors.white } })
+  end)
+end
+
+menus_bracket:subscribe("theme_change", function()
+  menus_bracket:set({ background = { color = colors.bg1 } })
 end)
 
 return menu_watcher

@@ -14,6 +14,7 @@ local battery = sbar.add("item", "widgets.battery", {
     font = {
       style = settings.font.numbers,
     },
+    color = colors.white,
     },
   update_freq = 180,
   popup = { align = "center" }
@@ -21,15 +22,18 @@ local battery = sbar.add("item", "widgets.battery", {
 
 local remaining_time = sbar.add("item", {
   position = "popup." .. battery.name,
+  updates = true,
   icon = {
     string = "Time remaining:",
     width = 100,
-    align = "left"
+    align = "left",
+    color = colors.white,
   },
   label = {
     string = "??:??h",
     width = 100,
-    align = "right"
+    align = "right",
+    color = colors.white,
   },
 })
 
@@ -94,9 +98,24 @@ battery:subscribe("mouse.clicked", function(env)
   end
 end)
 
-sbar.add("bracket", "widgets.battery.bracket", { battery.name }, {
+local battery_bracket = sbar.add("bracket", "widgets.battery.bracket", { battery.name }, {
   background = { color = colors.bg1 }
 })
+
+battery_bracket:subscribe("theme_change", function()
+  battery_bracket:set({ background = { color = colors.bg1 } })
+end)
+
+battery:subscribe("theme_change", function()
+  battery:set({ label = { color = colors.white } })
+end)
+
+remaining_time:subscribe("theme_change", function()
+  remaining_time:set({
+    icon = { color = colors.white },
+    label = { color = colors.white },
+  })
+end)
 
 sbar.add("item", "widgets.battery.padding", {
   position = "right",

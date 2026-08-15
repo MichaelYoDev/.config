@@ -72,11 +72,13 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
 
 local ssid = sbar.add("item", {
   position = "popup." .. wifi_bracket.name,
+  updates = true,
   icon = {
     font = {
       style = settings.font.style_map["Bold"]
     },
     string = icons.wifi.router,
+    color = colors.white,
   },
   width = popup_width,
   align = "center",
@@ -87,6 +89,7 @@ local ssid = sbar.add("item", {
     },
     max_chars = 18,
     string = "????????????",
+    color = colors.white,
   },
   background = {
     height = 2,
@@ -97,58 +100,70 @@ local ssid = sbar.add("item", {
 
 local hostname = sbar.add("item", {
   position = "popup." .. wifi_bracket.name,
+  updates = true,
   icon = {
     align = "left",
     string = "Hostname:",
     width = popup_width / 2,
+    color = colors.white,
   },
   label = {
     max_chars = 20,
     string = "????????????",
     width = popup_width / 2,
     align = "right",
+    color = colors.white,
   }
 })
 
 local ip = sbar.add("item", {
   position = "popup." .. wifi_bracket.name,
+  updates = true,
   icon = {
     align = "left",
     string = "IP:",
     width = popup_width / 2,
+    color = colors.white,
   },
   label = {
     string = "???.???.???.???",
     width = popup_width / 2,
     align = "right",
+    color = colors.white,
   }
 })
 
 local mask = sbar.add("item", {
   position = "popup." .. wifi_bracket.name,
+  updates = true,
   icon = {
     align = "left",
     string = "Subnet mask:",
     width = popup_width / 2,
+    color = colors.white,
   },
   label = {
     string = "???.???.???.???",
     width = popup_width / 2,
     align = "right",
+    color = colors.white,
   }
 })
 
 local router = sbar.add("item", {
   position = "popup." .. wifi_bracket.name,
+  updates = true,
   icon = {
     align = "left",
     string = "Router:",
     width = popup_width / 2,
+    color = colors.white,
   },
   label = {
     string = "???.???.???.???",
     width = popup_width / 2,
     align = "right",
+    color = colors.white,
   },
 })
 
@@ -217,6 +232,27 @@ wifi_up:subscribe("mouse.clicked", toggle_details)
 wifi_down:subscribe("mouse.clicked", toggle_details)
 wifi:subscribe("mouse.clicked", toggle_details)
 wifi:subscribe("mouse.exited.global", hide_details)
+
+wifi_bracket:subscribe("theme_change", function()
+  wifi_bracket:set({ background = { color = colors.bg1 } })
+end)
+
+ssid:subscribe("theme_change", function()
+  ssid:set({
+    icon = { color = colors.white },
+    label = { color = colors.white },
+    background = { color = colors.grey },
+  })
+end)
+
+for _, item in ipairs({ hostname, ip, mask, router }) do
+  item:subscribe("theme_change", function()
+    item:set({
+      icon = { color = colors.white },
+      label = { color = colors.white },
+    })
+  end)
+end
 
 local function copy_label_to_clipboard(env)
   local label = sbar.query(env.NAME).label.value

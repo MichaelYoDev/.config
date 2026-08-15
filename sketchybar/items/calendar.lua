@@ -35,7 +35,7 @@ local cal = sbar.add("item", {
 })
 
 -- Double border for calendar using a single item bracket
-sbar.add("bracket", { cal.name }, {
+local cal_bracket = sbar.add("bracket", { cal.name }, {
   background = {
     color = colors.transparent,
     height = 26,
@@ -48,4 +48,19 @@ sbar.add("item", { position = "right", width = settings.group_paddings })
 
 cal:subscribe({ "forced", "routine", "system_woke" }, function(env)
     cal:set({ icon = os.date("%a %b %d - "), label = os.date("%H:%M") })
+end)
+
+cal:subscribe("theme_change", function()
+  cal:set({
+    icon = { color = colors.white },
+    label = { color = colors.white },
+    background = {
+      color = colors.bg2,
+      border_color = colors.black,
+    },
+  })
+end)
+
+cal_bracket:subscribe("theme_change", function()
+  cal_bracket:set({ background = { border_color = colors.grey } })
 end)

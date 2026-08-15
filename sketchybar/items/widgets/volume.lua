@@ -9,6 +9,7 @@ local volume_percent = sbar.add("item", "widgets.volume1", {
   icon = { drawing = false },
   label = {
     string = "??%",
+    color = colors.white,
     padding_left = -1,
     font = {
       style = settings.font.numbers,
@@ -64,6 +65,7 @@ local volume_slider = sbar.add("slider", popup_width, {
     knob= {
       string = "􀀁",
       drawing = true,
+      color = colors.white,
     },
   },
   background = { color = colors.bg1, height = 2, y_offset = -20 },
@@ -151,4 +153,30 @@ volume_icon:subscribe("mouse.scrolled", volume_scroll)
 volume_percent:subscribe("mouse.clicked", volume_toggle_details)
 volume_percent:subscribe("mouse.exited.global", volume_collapse_details)
 volume_percent:subscribe("mouse.scrolled", volume_scroll)
+
+volume_icon:subscribe("theme_change", function()
+  volume_icon:set({
+    icon = { color = colors.grey },
+    label = { color = colors.white },
+  })
+end)
+
+volume_percent:subscribe("theme_change", function()
+  volume_percent:set({ label = { color = colors.white } })
+end)
+
+volume_bracket:subscribe("theme_change", function()
+  volume_bracket:set({ background = { color = colors.bg1 } })
+end)
+
+volume_slider:subscribe("theme_change", function()
+  volume_slider:set({
+    slider = {
+      highlight_color = colors.blue,
+      background = { color = colors.bg2 },
+      knob = { color = colors.white },
+    },
+    background = { color = colors.bg1 },
+  })
+end)
 

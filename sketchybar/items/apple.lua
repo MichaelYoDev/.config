@@ -9,6 +9,7 @@ local apple = sbar.add("item", {
 	icon = {
 		font = { size = 16.0 },
 		string = icons.apple,
+		color = colors.white,
 		padding_right = 6,
 		padding_left = 6,
 	},
@@ -24,7 +25,7 @@ local apple = sbar.add("item", {
 })
 
 -- Double border for apple using a single item bracket
-sbar.add("bracket", { apple.name }, {
+local apple_bracket = sbar.add("bracket", { apple.name }, {
 	background = {
 		color = colors.transparent,
 		height = 26,
@@ -34,3 +35,19 @@ sbar.add("bracket", { apple.name }, {
 
 -- Padding item required because of bracket
 sbar.add("item", { width = 7 })
+
+apple:subscribe("theme_change", function()
+	apple:set({
+		icon = { color = colors.white },
+		background = {
+			color = colors.bg2,
+			border_color = colors.black,
+		},
+	})
+end)
+
+apple_bracket:subscribe("theme_change", function()
+	apple_bracket:set({
+		background = { border_color = colors.grey },
+	})
+end)

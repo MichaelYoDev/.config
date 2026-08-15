@@ -11,6 +11,7 @@ local front_app = sbar.add("item", "front_app", {
             style = settings.font.style_map["Black"],
             size = 14.0,
         },
+        color = colors.white,
         padding_left = 8,
     },
     updates = true,
@@ -18,6 +19,10 @@ local front_app = sbar.add("item", "front_app", {
 
 front_app:subscribe("front_app_switched", function(env)
     front_app:set({ label = { string = env.INFO } })
+end)
+
+front_app:subscribe("theme_change", function()
+    front_app:set({ label = { color = colors.white } })
 end)
 
 front_app:subscribe("mouse.clicked", function(env)
@@ -90,6 +95,17 @@ end)
 
 spaces_indicator:subscribe("mouse.clicked", function(env)
     sbar.trigger("swap_menus_and_spaces")
+end)
+
+spaces_indicator:subscribe("theme_change", function()
+    spaces_indicator:set({
+        icon = { color = colors.grey },
+        label = { color = colors.bg1 },
+        background = {
+            color = colors.with_alpha(colors.grey, 0.0),
+            border_color = colors.with_alpha(colors.bg1, 0.0),
+        },
+    })
 end)
 
 

@@ -25,6 +25,7 @@ local media_cover = sbar.add("item", {
 local media_artist = sbar.add("item", {
     position = "right",
     drawing = false,
+    updates = true,
     padding_left = 3,
     padding_right = 0,
     width = 0,
@@ -41,32 +42,37 @@ local media_artist = sbar.add("item", {
 local media_title = sbar.add("item", {
     position = "right",
     drawing = false,
+    updates = true,
     padding_left = 3,
     padding_right = 0,
     icon = { drawing = false },
     label = {
         font = { size = 11 },
         width = 0,
+        color = colors.white,
         max_chars = 16,
         y_offset = -5,
     },
 })
 
-sbar.add("item", {
+local media_back = sbar.add("item", {
     position = "popup." .. media_cover.name,
-    icon = { string = icons.media.back },
+    updates = true,
+    icon = { string = icons.media.back, color = colors.white },
     label = { drawing = false },
     click_script = "nowplaying-cli previous",
 })
-sbar.add("item", {
+local media_play_pause = sbar.add("item", {
     position = "popup." .. media_cover.name,
-    icon = { string = icons.media.play_pause },
+    updates = true,
+    icon = { string = icons.media.play_pause, color = colors.white },
     label = { drawing = false },
     click_script = "nowplaying-cli togglePlayPause",
 })
-sbar.add("item", {
+local media_forward = sbar.add("item", {
     position = "popup." .. media_cover.name,
-    icon = { string = icons.media.forward },
+    updates = true,
+    icon = { string = icons.media.forward, color = colors.white },
     label = { drawing = false },
     click_script = "nowplaying-cli next",
 })
@@ -89,8 +95,8 @@ end
 media_cover:subscribe("media_change", function(env)
     if whitelist[env.INFO.app] then
         local drawing = (env.INFO.state == "playing")
-        media_artist:set({ drawing = drawing, label = env.INFO.artist })
-        media_title:set({ drawing = drawing, label = env.INFO.title })
+        media_artist:set({ drawing = drawing, label = { string = env.INFO.artist, color = colors.with_alpha(colors.white, 0.6) } })
+        media_title:set({ drawing = drawing, label = { string = env.INFO.title, color = colors.white } })
         media_cover:set({ drawing = drawing })
 
         if drawing then
@@ -119,3 +125,17 @@ end)
 media_title:subscribe("mouse.exited.global", function(env)
     media_cover:set({ popup = { drawing = false } })
 end)
+
+media_artist:subscribe("theme_change", function()
+    media_artist:set({ label = { color = colors.with_alpha(colors.white, 0.6) } })
+end)
+
+media_title:subscribe("theme_change", function()
+    media_title:set({ label = { color = colors.white } })
+end)
+
+for _, item in ipairs({ media_back, media_play_pause, media_forward }) do
+    item:subscribe("theme_change", function()
+        item:set({ icon = { color = colors.white } })
+    end)
+end
