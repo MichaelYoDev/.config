@@ -2,39 +2,132 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w3",
-      "custom_name": null,
-      "identity_cwd": "/Users/michaeloliveira",
+      "id": "w4",
+      "custom_name": ".config",
+      "identity_cwd": "/Users/michaeloliveira/.config",
       "public_pane_numbers": {
-        "3": 1
+        "15": 15,
+        "16": 16,
+        "1": 1
       },
-      "next_public_pane_number": 2,
+      "next_public_pane_number": 17,
       "public_tab_numbers": [
-        1
+        1,
+        3,
+        4
       ],
-      "next_public_tab_number": 2,
+      "next_public_tab_number": 5,
       "tabs": [
         {
           "custom_name": null,
+          "layout": {
+            "Pane": 1
+          },
+          "panes": {
+            "1": {
+              "cwd": "/Users/michaeloliveira/.config"
+            }
+          },
+          "zoomed": false,
+          "focused": 1,
+          "root_pane": 1
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 15
+          },
+          "panes": {
+            "15": {
+              "cwd": "/Users/michaeloliveira/.config"
+            }
+          },
+          "zoomed": false,
+          "focused": 15,
+          "root_pane": 15
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 16
+          },
+          "panes": {
+            "16": {
+              "cwd": "/Users/michaeloliveira/.config"
+            }
+          },
+          "zoomed": false,
+          "focused": 16,
+          "root_pane": 16
+        }
+      ],
+      "active_tab": 1
+    },
+    {
+      "id": "w6",
+      "custom_name": "personal-site",
+      "identity_cwd": "/Users/michaeloliveira/personal-site",
+      "public_pane_numbers": {
+        "5": 3,
+        "3": 1,
+        "4": 2
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1,
+        2,
+        3
+      ],
+      "next_public_tab_number": 4,
+      "tabs": [
+        {
+          "custom_name": "dev",
           "layout": {
             "Pane": 3
           },
           "panes": {
             "3": {
-              "cwd": "/Users/michaeloliveira"
+              "cwd": "/Users/michaeloliveira/personal-site"
             }
           },
           "zoomed": false,
           "focused": 3,
           "root_pane": 3
+        },
+        {
+          "custom_name": "nvim",
+          "layout": {
+            "Pane": 4
+          },
+          "panes": {
+            "4": {
+              "cwd": "/Users/michaeloliveira/personal-site"
+            }
+          },
+          "zoomed": false,
+          "focused": 4,
+          "root_pane": 4
+        },
+        {
+          "custom_name": "opencode",
+          "layout": {
+            "Pane": 5
+          },
+          "panes": {
+            "5": {
+              "cwd": "/Users/michaeloliveira/personal-site"
+            }
+          },
+          "zoomed": false,
+          "focused": 5,
+          "root_pane": 5
         }
       ],
-      "active_tab": 0
+      "active_tab": 2
     }
   ],
   "active": 0,
   "selected": 0,
-  "agent_panel_scope": "AllWorkspaces",
   "sidebar_width": 26,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []

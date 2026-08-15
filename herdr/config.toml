@@ -1,1 +1,55 @@
 onboarding = false
+
+# ============================================================================
+# THEME — rose-pine matching system appearance
+# ============================================================================
+[theme]
+name = "rose-pine"
+auto_switch = true
+dark_name = "rose-pine"
+light_name = "rose-pine-dawn"
+
+[ui]
+# accent = "#9ccfd8"
+
+[ui.toast]
+delivery = "herdr"
+
+# ============================================================================
+# KEYS — prefix stays ctrl+space like tmux.
+# ============================================================================
+[keys]
+prefix = "ctrl+space"
+
+# vim motions: keep default prefix+h/j/k/l
+focus_pane_left = ["prefix+h"]
+focus_pane_down = ["prefix+j"]
+focus_pane_up = ["prefix+k"]
+focus_pane_right = ["prefix+l"]
+
+# tmux-style splits: `%` = side-by-side, `"` = stacked
+split_vertical = "prefix+%"
+split_horizontal = "prefix+\""
+
+# worktree moved off prefix+shift+g so lazygit can keep the old tmux binding
+new_worktree = "prefix+alt+w"
+
+# ============================================================================
+# CUSTOM COMMANDS
+#   prefix+f         -> sessionizer (popup)
+#   prefix+shift+g   -> lazygit (popup)
+# ============================================================================
+[[keys.command]]
+key = "prefix+f"
+type = "popup"
+command = "~/.config/scripts/term/tmux-sessionizer.sh"
+description = "sessionizer: jump to / create a workspace"
+
+[[keys.command]]
+key = "prefix+shift+g"
+type = "popup"
+command = "lazygit"
+description = "run lazygit"
+width = "85%"
+height = "85%"
+

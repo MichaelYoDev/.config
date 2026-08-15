@@ -18,8 +18,11 @@ PROMPT='%F{green}%B%2~%b%f${vcs_info_msg_0_:+ ${vcs_info_msg_0_}} $ '
 
 # Startup ======================================================================
 nerdfetch
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach-session -t home || tmux new-session -s home
+# Inside herdr panes HERDR_ENV=1 is set, so this never nests. New terminals
+# attach to the default session (the persistent "home"); panes target it via
+# HERDR_SOCKET_PATH.
+if command -v herdr &> /dev/null && [ -z "$HERDR_ENV" ] && [ -z "$TMUX" ]; then
+    herdr
 fi
 
 # History ======================================================================
@@ -43,7 +46,7 @@ alias micro='f() {
 alias deploy="~/.config/scripts/term/deploy.sh"
 alias exif="~/.config/scripts/term/add-film-metadata.sh"
 
-# Tmux =========================================================================
+# Term scripts =================================================================
 export PATH=$PATH:/Users/michaeloliveira/.config/scripts/term
 bindkey -s ^f "tmux-sessionizer.sh\n"
 
