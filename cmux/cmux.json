@@ -6,7 +6,8 @@
       "focusLeft": ["ctrl+space", "h"],
       "focusRight": ["ctrl+space", "l"],
       "focusDown": ["ctrl+space", "j"],
-      "focusUp": ["ctrl+space", "k"]
+      "focusUp": ["ctrl+space", "k"],
+      "selectSurfaceByNumber": ["ctrl+space", "1"]
     }
   }
 }

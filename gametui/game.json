@@ -1,0 +1,14 @@
+{
+  "clientId": "player-d695d022e4da42999c6be7b7",
+  "playerName": "asdflinux",
+  "playerGlyph": "▲",
+  "positions": {
+    "main": {
+      "x": 357.9597222222229,
+      "y": 43.44861111111111,
+      "realmId": "overworld",
+      "worldSeed": 27335274,
+      "updatedAt": 1779395003225
+    }
+  }
+}

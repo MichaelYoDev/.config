@@ -1,0 +1,343 @@
+2026-06-16T01:17:58.184403Z  INFO herdr::platform::macos: raised server file descriptor soft limit previous=256 target=8192
+2026-06-16T01:17:58.186191Z  INFO herdr::api::server: api server listening path=/Users/michaeloliveira/.config/herdr/herdr.sock
+2026-06-16T01:17:58.189172Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-06-16T01:17:58.202915Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-16T01:17:58.204228Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-06-16T01:17:58.207779Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=34479
+2026-06-16T01:17:58.208524Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w1" pane_id=1
+2026-06-16T01:17:58.208546Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-06-16T01:17:58.208735Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-06-16T01:17:58.208750Z  INFO herdr::server::headless: created startup workspace cwd=/Users/michaeloliveira/Desktop/code/personal-site
+2026-06-16T01:17:58.209009Z  INFO herdr::server::headless: client protocol socket listening path=/Users/michaeloliveira/.config/herdr/herdr-client.sock
+2026-06-16T01:17:58.209026Z  INFO herdr::server::headless: herdr server started api_socket=/Users/michaeloliveira/.config/herdr/herdr.sock client_socket=/Users/michaeloliveira/.config/herdr/herdr-client.sock
+2026-06-16T01:17:58.209044Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=34461
+2026-06-16T01:17:58.360982Z  INFO herdr::server::headless: client connected client_id=2 cols=187 rows=75 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-06-16T01:18:03.216087Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/michaeloliveira/.config/herdr/session.json workspaces=1
+2026-06-16T01:18:06.253925Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=1 status="ExitStatus { code: 130, signal: None }"
+2026-06-16T01:18:06.254049Z  INFO herdr::pane: pane session terminated pane=1 pid=34479 signal=Hangup
+2026-06-16T01:18:06.254529Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=74 cols=161 scrollback_limit_bytes=10000000
+2026-06-16T01:18:06.260103Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=34789
+2026-06-16T01:18:06.260523Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w2" pane_id=2
+2026-06-16T01:18:06.260563Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w2"
+2026-06-16T01:18:06.260581Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w2" tab_id="w2:t1"
+2026-06-16T01:18:07.670401Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 0, signal: None }"
+2026-06-16T01:18:07.670552Z  INFO herdr::pane: pane session terminated pane=2 pid=34789 signal=Hangup
+2026-06-16T01:18:07.670722Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=74 cols=161 scrollback_limit_bytes=10000000
+2026-06-16T01:18:07.676673Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=34873
+2026-06-16T01:18:07.677103Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w3" pane_id=3
+2026-06-16T01:18:07.677140Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-06-16T01:18:07.677165Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-06-16T01:18:12.685859Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/michaeloliveira/.config/herdr/session.json workspaces=1
+2026-06-16T01:18:37.835457Z  WARN herdr::raw_input: flushing lone escape after input timeout; if this follows an alt chord or focus switch it may reach the pane as plain esc bytes=[27]
+2026-06-16T01:18:51.004695Z  INFO herdr::server::headless: client detach requested via keybind client_id=2
+2026-06-16T01:18:51.007074Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-06-16T01:47:58.217746Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-06-16T02:17:58.211273Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T14:05:19.384881Z  INFO herdr::platform::macos: raised server file descriptor soft limit previous=256 target=8192
+2026-07-26T14:05:19.386395Z  INFO herdr::api::server: api server listening path=/Users/michaeloliveira/.config/herdr/herdr.sock
+2026-07-26T14:05:19.392590Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-07-26T14:05:19.396869Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=12642
+2026-07-26T14:05:19.398345Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=1
+2026-07-26T14:05:19.398514Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-07-26T14:05:19.420200Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T14:05:19.421758Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/Users/michaeloliveira/personal-site
+2026-07-26T14:05:19.421922Z  INFO herdr::server::headless: client protocol socket listening path=/Users/michaeloliveira/.config/herdr/herdr-client.sock
+2026-07-26T14:05:19.421935Z  INFO herdr::server::headless: herdr server started api_socket=/Users/michaeloliveira/.config/herdr/herdr.sock client_socket=/Users/michaeloliveira/.config/herdr/herdr-client.sock
+2026-07-26T14:05:19.421958Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=12641
+2026-07-26T14:05:19.514148Z  INFO herdr::server::headless: client connected client_id=2 cols=159 rows=48 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-07-26T14:05:36.801680Z  WARN herdr::logging: update check failed event="update.check.complete" subsystem="update" outcome="error" err="failed to fetch Homebrew formula JSON"
+2026-07-26T14:05:36.803415Z  WARN herdr::detect::manifest_update: agent detection manifest update failed: failed to fetch https://herdr.dev/agent-detection/index.toml
+2026-07-26T14:05:40.174897Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-07-26T20:37:17.561087Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-26T20:37:17.859666Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-26T20:37:18.348136Z  INFO herdr::logging: update available event="update.available" subsystem="update" outcome="ok" version="0.7.5"
+2026-07-26T20:37:18.824793Z  INFO herdr::update: auto-update check: v0.7.5 available through Homebrew, waiting for explicit install
+2026-07-26T22:53:13.154683Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-27T00:34:39.885868Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-27T03:15:27.922801Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-27T04:00:46.103004Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-27T13:34:30.963487Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-27T14:33:25.649804Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-27T23:59:29.352834Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-28T03:40:56.032404Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-28T14:20:13.000561Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-28T16:10:45.593874Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-28T23:01:23.273652Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-29T00:13:14.116155Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-29T00:13:42.190721Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/codex.toml
+2026-07-29T01:10:18.550385Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-29T01:40:17.113445Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-29T02:10:23.641619Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-29T02:10:41.682965Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="amp" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/amp.toml
+2026-07-29T02:11:42.807975Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="grok" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/grok.toml
+2026-07-29T03:19:56.973848Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-29T16:45:23.335319Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-29T22:49:06.338125Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T00:23:24.545491Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T01:08:22.381391Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T02:05:36.113825Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T02:59:50.692531Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T07:56:20.736543Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T13:45:11.784944Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T16:47:53.325874Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T21:52:56.063162Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T22:22:56.007535Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T22:52:56.021665Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-30T23:22:56.558774Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T01:10:51.756662Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T02:57:03.804841Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T04:37:49.608679Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T13:53:17.498291Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T14:23:17.949288Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T15:37:15.368020Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T16:07:15.403554Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T16:38:39.467665Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T16:38:43.187907Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="amp" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/amp.toml
+2026-07-31T19:53:28.604251Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T20:36:53.113139Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T21:06:52.522077Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T21:36:52.566773Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-07-31T22:16:01.540774Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-01T02:27:22.623633Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-01T03:35:44.290676Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-01T13:13:31.022079Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-01T13:43:31.028178Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-01T17:27:42.651565Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-01T23:32:07.208204Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T01:35:35.623602Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T02:05:35.305021Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T02:35:34.871031Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T03:05:34.997080Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T04:53:14.834430Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T05:23:14.848886Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T05:53:14.903361Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T06:23:15.067322Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T06:53:14.895886Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T07:23:14.842857Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T09:12:47.295717Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T13:20:23.701284Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T13:50:26.674696Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T15:28:53.052463Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T15:58:52.949691Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T17:22:45.983154Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T17:52:46.148415Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-02T21:07:22.914689Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-03T00:42:03.227474Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-03T02:25:54.530194Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-03T13:32:25.341311Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-03T14:02:25.207536Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-03T17:56:28.906135Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-03T19:03:37.987411Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-03T19:39:30.561537Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T02:33:10.579270Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T03:03:09.713598Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T03:53:12.653716Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T04:23:12.600341Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T04:53:12.954690Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T05:27:45.680331Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T05:57:45.756373Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T06:27:45.612241Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T06:57:45.522190Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T09:42:22.608867Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T13:23:06.314510Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T14:09:06.208289Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T16:02:20.115987Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T17:02:03.030595Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T17:32:03.249147Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-04T18:47:41.713299Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-05T03:49:34.897993Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-05T13:46:01.922551Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-05T17:08:02.967328Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-05T21:26:13.945586Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-05T21:56:13.270492Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-05T22:26:13.227327Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-05T22:56:13.197273Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T03:10:37.643914Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T04:31:59.874622Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T05:01:59.880690Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T05:31:59.607963Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T06:01:59.650996Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T06:46:59.597530Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T07:16:59.631007Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T09:12:23.969175Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T12:57:04.123938Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T13:43:03.321796Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T17:04:47.175400Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-06T22:37:33.757672Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-07T01:05:00.618439Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-07T03:32:34.090201Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-07T13:28:25.630310Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-07T13:58:24.533400Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-07T18:48:49.542575Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-07T19:24:42.055531Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-08T02:35:21.359175Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-08T03:05:22.556123Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-08T13:23:37.684981Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-08T17:33:12.333110Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-08T22:45:27.363323Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-08T23:15:27.262029Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-09T00:45:38.748518Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-09T01:49:06.034362Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-09T02:34:34.124035Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-09T03:37:06.663607Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-09T14:10:20.118817Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-09T16:44:22.059764Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-09T21:40:22.921195Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-09T22:10:22.916228Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T00:08:52.650006Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T00:38:52.671374Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T01:08:52.610325Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T02:53:56.410666Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T05:39:31.742631Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T13:46:32.010227Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T14:16:31.821165Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T15:23:36.544422Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T15:53:36.581307Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T17:18:56.139871Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T17:49:32.577882Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-10T21:41:49.350636Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T01:19:12.128153Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T01:19:14.420778Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-11T14:01:33.171796Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T14:01:33.894577Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-11T15:06:11.179988Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T15:06:15.668364Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-11T15:36:10.397638Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T15:36:11.130464Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-11T16:06:10.351986Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T16:06:11.146868Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-11T17:33:16.571886Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T17:33:17.293683Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-11T21:50:53.226004Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T21:50:54.033776Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-11T22:50:49.349162Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-11T22:50:52.405399Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T02:12:52.631401Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T02:12:53.347489Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T04:16:32.642259Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T04:16:33.367450Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T13:53:38.893947Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T13:53:41.352280Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T15:05:37.580204Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T15:05:38.271161Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T15:35:37.565371Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T15:35:38.339265Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T16:05:37.537361Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T16:05:38.296853Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T17:05:59.205069Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T17:05:59.978155Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T17:43:14.532303Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T17:43:17.892403Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T17:43:47.451527Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="devin" error=fetch failed: failed to fetch https://herdr.dev/agent-detection/devin.toml
+2026-08-12T19:08:38.019259Z  WARN herdr::detect::manifest_update: agent detection manifest update failed: failed to fetch https://herdr.dev/agent-detection/index.toml
+2026-08-12T21:59:01.143162Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T21:59:03.320985Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T22:29:01.903331Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T22:29:03.572969Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-12T22:59:00.912155Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-12T22:59:01.294745Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T00:08:24.007711Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T00:08:24.009485Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T00:08:32.150420Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T05:46:20.665798Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T05:46:20.667070Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T05:46:21.470059Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T13:52:16.080070Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T13:52:16.081774Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T13:52:17.328816Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T14:40:23.636462Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T14:40:23.637973Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T14:40:25.068436Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T15:17:34.634608Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T15:17:34.636142Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T15:17:35.380449Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T16:06:01.453819Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T16:06:01.454576Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T16:06:02.155432Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T16:36:01.476723Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T16:36:01.477819Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T16:36:02.215908Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T17:07:39.076509Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T17:07:39.077007Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T17:07:39.787047Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T17:37:39.071538Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T17:37:39.073522Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T17:37:39.917753Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T18:07:39.079327Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T18:07:39.081019Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T18:07:39.825801Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T18:37:39.124573Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T18:37:39.125530Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T18:37:39.891724Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T22:12:59.409793Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T22:12:59.410171Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T22:12:59.921521Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T22:42:59.438469Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T22:42:59.439448Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T22:42:59.854291Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T23:12:59.943933Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T23:12:59.946119Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T23:13:03.083745Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-13T23:43:17.772739Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-13T23:43:17.776024Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-13T23:43:18.171215Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T01:46:50.633994Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T01:46:50.635950Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T01:46:51.374757Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T02:37:50.169667Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T02:37:50.171511Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T02:37:51.963593Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T11:45:27.629499Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T11:45:27.631179Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T11:45:28.348817Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T13:43:57.592341Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T13:43:57.593537Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T13:43:58.266422Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T18:30:39.370961Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T18:30:39.372186Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T18:30:40.268563Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T19:41:06.319257Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T19:41:06.321090Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T19:41:07.108554Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T20:15:19.350991Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T20:15:19.352549Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T20:15:20.381635Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T20:45:19.244171Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T20:45:19.245865Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T20:45:20.033336Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T22:29:56.265533Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T22:29:56.266625Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T22:29:56.653420Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-14T22:59:56.264683Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-14T22:59:56.266674Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-14T22:59:56.660530Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T03:27:34.280307Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T03:27:34.281979Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T03:27:35.084683Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T04:21:08.280542Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T04:21:08.282109Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T04:21:08.973358Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T05:41:20.019608Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T05:41:20.021593Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T05:41:20.756224Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T06:11:20.021443Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T06:11:20.023623Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T06:11:20.812045Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T08:10:17.960127Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T08:10:17.961638Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T08:10:18.659735Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T08:40:17.914816Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T08:40:17.917396Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T08:40:18.593298Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T09:10:17.938283Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T09:10:17.939246Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T09:10:18.617953Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T11:05:35.594078Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T11:05:35.596400Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T11:05:36.383904Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T11:51:47.553567Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T11:51:47.555206Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T11:51:48.258097Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
+2026-08-15T13:38:28.559538Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="maki"
+2026-08-15T13:38:28.560733Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-15T13:38:29.295042Z  WARN herdr::detect::manifest_update: agent detection manifest update failed for agent agent="codex" error=rule trust_directory uses invalid region: top_non_empty_lines(20)
