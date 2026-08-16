@@ -20,9 +20,16 @@ PROMPT='%F{green}%B%2~%b%f${vcs_info_msg_0_:+ ${vcs_info_msg_0_}} $ '
 nerdfetch
 # Inside herdr panes HERDR_ENV=1 is set, so this never nests. New terminals
 # attach to the default session (the persistent "home"); panes target it via
-# HERDR_SOCKET_PATH.
+# HERDR_SOCKET_PATH. A window opened by notes.sh (alt-n) carries a marker file
+# and instead attaches to the "notes" session, so the normal terminal's default
+# session is never switched away from.
 if command -v herdr &> /dev/null && [ -z "$HERDR_ENV" ] && [ -z "$TMUX" ]; then
-    herdr
+    if [ -f /tmp/herdr_notes_attach ]; then
+        rm -f /tmp/herdr_notes_attach
+        herdr --session notes
+    else
+        herdr
+    fi
 fi
 
 # History ======================================================================
