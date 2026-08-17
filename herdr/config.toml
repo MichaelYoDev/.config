@@ -1,7 +1,7 @@
 onboarding = false
 
 # ============================================================================
-# THEME — rose-pine matching system appearance
+# THEME
 # ============================================================================
 [theme]
 name = "rose-pine"
@@ -10,13 +10,16 @@ dark_name = "rose-pine"
 light_name = "rose-pine-dawn"
 
 [ui]
-# accent = "#9ccfd8"
+accent = "#9ccfd8"
 
 [ui.toast]
-delivery = "herdr"
+delivery = "terminal"
+
+[ui.sound]
+enabled = true
 
 # ============================================================================
-# KEYS — prefix stays ctrl+space like tmux.
+# KEYS
 # ============================================================================
 [keys]
 prefix = "ctrl+space"
@@ -33,6 +36,14 @@ split_horizontal = "prefix+\""
 
 # worktree moved off prefix+shift+g so lazygit can keep the old tmux binding
 new_worktree = "prefix+alt+w"
+
+# workspace navigation: prefix+shift+1..9 jumps by number
+switch_workspace = "prefix+shift+1..9"
+
+# agent navigation: prefix+ctrl+j/k cycle agents, prefix+ctrl+1..9 jumps by number
+next_agent = "prefix+ctrl+j"
+previous_agent = "prefix+ctrl+k"
+focus_agent = "prefix+ctrl+1..9"
 
 # ============================================================================
 # CUSTOM COMMANDS
