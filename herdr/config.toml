@@ -11,6 +11,7 @@ light_name = "rose-pine-dawn"
 
 [ui]
 accent = "#9ccfd8"
+prompt_new_tab_name = false
 
 [ui.toast]
 delivery = "terminal"
@@ -24,43 +25,42 @@ enabled = true
 [keys]
 prefix = "ctrl+space"
 
-# vim motions: keep default prefix+h/j/k/l
+# vim motions for pane nav
 focus_pane_left = ["prefix+h"]
 focus_pane_down = ["prefix+j"]
 focus_pane_up = ["prefix+k"]
 focus_pane_right = ["prefix+l"]
 
-# tmux-style splits: `%` = side-by-side, `"` = stacked
+# tmux split bindings
 split_vertical = "prefix+%"
 split_horizontal = "prefix+\""
 
-# worktree moved off prefix+shift+g so lazygit can keep the old tmux binding
+# conflict with my lazygit binding
 new_worktree = "prefix+alt+w"
 
-# workspace navigation: prefix+shift+1..9 jumps by number
+# workspace nav
+next_workspace = "prefix+shift+j"
+previous_workspace = "prefix+shift+k"
 switch_workspace = "prefix+shift+1..9"
 
-# agent navigation: prefix+ctrl+j/k cycle agents, prefix+ctrl+1..9 jumps by number
+# agent nav
 next_agent = "prefix+ctrl+j"
 previous_agent = "prefix+ctrl+k"
 focus_agent = "prefix+ctrl+1..9"
 
 # ============================================================================
 # CUSTOM COMMANDS
-#   prefix+f         -> sessionizer (popup)
-#   prefix+shift+g   -> lazygit (popup)
 # ============================================================================
 [[keys.command]]
 key = "prefix+f"
 type = "popup"
-command = "~/.config/scripts/term/tmux-sessionizer.sh"
-description = "sessionizer: jump to / create a workspace"
+command = "~/.config/scripts/term/herdr-sessionizer.sh"
+width = "65%"
+height = "65%"
 
 [[keys.command]]
 key = "prefix+shift+g"
 type = "popup"
 command = "lazygit"
-description = "run lazygit"
 width = "85%"
 height = "85%"
-
