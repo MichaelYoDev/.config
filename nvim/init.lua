@@ -77,7 +77,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 -- PLUGINS =====================================================================
 vim.pack.add({
-    -- { src = 'https://github.com/neanias/everforest-nvim',         name = 'everforest' },
     { src = 'https://github.com/brianhuster/live-preview.nvim' },
     { src = 'https://github.com/chomosuke/typst-preview.nvim' },
     { src = 'https://github.com/f-person/auto-dark-mode.nvim' },
@@ -87,8 +86,6 @@ vim.pack.add({
 })
 
 require('mini.pick').setup()
--- require('everforest').setup({ background = 'hard', transparent_background_level = 1 })
--- vim.cmd.colorscheme('everforest')
 vim.cmd.colorscheme('rose-pine')
 
 -- KEYMAPS =====================================================================
@@ -108,6 +105,12 @@ m('n', '<leader>h', '<CMD>Pick help<CR>')
 m('n', '<leader>g', '<CMD>Pick grep_live<CR>')
 
 m('n', '<leader>lf', vim.lsp.buf.format)
+
+local packman = require('pluginStash')
+m('n', '<leader>pl', packman.list)
+m('n', '<leader>pu', packman.update_all)
+m('n', '<leader>pi', packman.install)
+m('n', '<leader>pd', packman.delete)
 
 m('x', '<leader>p', '"_dP')
 m({ 'n', 'v' }, '<leader>d', '"_d')
