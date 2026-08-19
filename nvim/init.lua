@@ -109,7 +109,6 @@ m('n', '<leader>lf', vim.lsp.buf.format)
 local packman = require('pluginStash')
 m('n', '<leader>pl', packman.list)
 m('n', '<leader>pu', packman.update_all)
-m('n', '<leader>pi', packman.install)
 m('n', '<leader>pd', packman.delete)
 
 m('x', '<leader>p', '"_dP')

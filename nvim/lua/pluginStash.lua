@@ -29,15 +29,6 @@ function M.update_all()
     vim.pack.update()
 end
 
-function M.install()
-    vim.ui.input({ prompt = 'user/repo: ' }, function(input)
-        if not input or input == '' then return end
-        local url = 'https://github.com/' .. input
-        vim.pack.add({ { src = url } })
-        vim.notify('Installed: ' .. input, vim.log.levels.INFO)
-    end)
-end
-
 function M.delete()
     local inactive = vim.tbl_filter(function(p)
         return not p.active
