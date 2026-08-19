@@ -14,3 +14,7 @@ end)
 vim.keymap.set({ "n", "x", "v" }, "j", "gj")
 vim.keymap.set({ "n", "x", "v" }, "k", "gk")
 
+m("n", "<leader>c", "0ci[x<C-[>0j", { desc = "check an unfinished checkbox" })
+m("n", "<leader>d", "0ci[-<C-[>0j", { desc = "in-progress an unfinished checkbox" })
+m("n", "<leader>n", "0i- [ ] ", { desc = "new checkbox" })
+
