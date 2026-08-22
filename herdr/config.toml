@@ -1,8 +1,6 @@
 onboarding = false
 
-# ============================================================================
-# THEME
-# ============================================================================
+# THEME ========================================================================
 [theme]
 name = "rose-pine"
 auto_switch = true
@@ -12,6 +10,8 @@ light_name = "rose-pine-dawn"
 [ui]
 accent = "#9ccfd8"
 prompt_new_tab_name = false
+show_agent_labels_on_pane_borders = true
+
 
 [ui.toast]
 delivery = "terminal"
@@ -19,9 +19,7 @@ delivery = "terminal"
 [ui.sound]
 enabled = true
 
-# ============================================================================
-# KEYS
-# ============================================================================
+# KEYS =========================================================================
 [keys]
 prefix = "ctrl+space"
 
@@ -48,9 +46,7 @@ next_agent = "prefix+ctrl+j"
 previous_agent = "prefix+ctrl+k"
 focus_agent = "prefix+ctrl+1..9"
 
-# ============================================================================
-# CUSTOM COMMANDS
-# ============================================================================
+# CUSTOM COMMANDS ==============================================================
 [[keys.command]]
 key = "prefix+f"
 type = "popup"
@@ -64,3 +60,6 @@ type = "popup"
 command = "lazygit"
 width = "85%"
 height = "85%"
+
+[experimental]
+kitty_graphics = true
