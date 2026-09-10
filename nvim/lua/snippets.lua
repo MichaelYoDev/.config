@@ -57,12 +57,12 @@ local ft_snippets = {
     dir: ttb,
     spacing: 2em,
     "Michael Oliveira",
-    "Teacher McTeacherson",
-    "Class 123",
+    "Professor ${1:Teacher Name}",
+    "${2:CLS 101}",
     datetime.today().display("[day] [month repr:long] [year repr:full] "),
 ))
 
-#align(center)[${1}]
+#align(center)[${3:Title}]
 
 
 ]],
