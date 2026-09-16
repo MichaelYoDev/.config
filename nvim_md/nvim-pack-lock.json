@@ -1,0 +1,20 @@
+{
+  "plugins": {
+    "markview.nvim": {
+      "rev": "89405b50375795202163400c4a04ad2fde81698d",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
+    },
+    "neovim": {
+      "rev": "72befaffeac38db7bdd49e0549eaa2c4806dd878",
+      "src": "https://github.com/rose-pine/neovim"
+    },
+    "render-markdown.nvim": {
+      "rev": "3da7bb459f6cff03980dd1e106c46f3e62ff4d9f",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
+    "rose-pine": {
+      "rev": "9504524e5ed0e326534698f637f9d038ba4cd0ee",
+      "src": "https://github.com/rose-pine/neovim"
+    }
+  }
+}
