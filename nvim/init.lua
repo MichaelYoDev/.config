@@ -106,10 +106,10 @@ m('n', '<leader>g', '<CMD>Pick grep_live<CR>')
 
 m('n', '<leader>lf', vim.lsp.buf.format)
 
-local packman = require('pluginStash')
-m('n', '<leader>pl', packman.list)
-m('n', '<leader>pu', packman.update_all)
-m('n', '<leader>pd', packman.delete)
+local pluginStash = require('pluginStash')
+m('n', '<leader>pl', pluginStash.list)
+m('n', '<leader>pu', pluginStash.update_all)
+m('n', '<leader>pd', pluginStash.delete)
 
 m('x', '<leader>p', '"_dP')
 m({ 'n', 'v' }, '<leader>d', '"_d')

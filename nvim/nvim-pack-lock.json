@@ -1,28 +1,32 @@
 {
   "plugins": {
     "auto-dark-mode.nvim": {
-      "rev": "54058b4fe414bd64bd2904a6f8a63f1f14e3d8df",
+      "rev": "2b16a24c202892e61fca7df4d2d7c4c872a44165",
       "src": "https://github.com/f-person/auto-dark-mode.nvim"
     },
     "live-preview.nvim": {
-      "rev": "35ddc5a99499d1d2f4adefb7e92d0c537353fdec",
+      "rev": "a6307fa340ed7c0d96f5c567afc8c991aad94ce0",
       "src": "https://github.com/brianhuster/live-preview.nvim"
     },
     "mini.pick": {
-      "rev": "b435139",
+      "rev": "360c1bb33610e030698d07ed15969ab4762dbcd6",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
     "nvim-treesitter": {
-      "rev": "de003000a287c501a6650a1ddd3be80ee34278d4",
+      "rev": "9a168f6357ed21c3a636e1727bc7d382abc451b8",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
+    "render-markdown.nvim": {
+      "rev": "640a3ec6d538bad17c328be373c7cad0293d9589",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
     "rose-pine": {
-      "rev": "9504524e5ed0e326534698f637f9d038ba4cd0ee",
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
       "src": "https://github.com/rose-pine/neovim"
     },
     "typst-preview.nvim": {
-      "rev": "dea4525d5420b7c32eebda7de15a6beb9d6574fa",
+      "rev": "1c2e19486397be1c580b560fc50ee36abe329c46",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     }
   }
