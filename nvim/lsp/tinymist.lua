@@ -30,8 +30,19 @@ local function create_tinymist_command(command_name, client, bufnr)
             if err then
                 return vim.notify(err.code .. ': ' .. err.message, vim.log.levels.ERROR)
             end
-            -- If exporting, show the string result; else, show the table for inspection
-            vim.notify(export_type and res or vim.inspect(res), vim.log.levels.INFO)
+            if not export_type then
+                return vim.notify(vim.inspect(res), vim.log.levels.INFO)
+            end
+            -- export returns one result per document: a single table, or a list of them
+            local items = type(res) == 'table' and (vim.islist(res) and res or { res }) or { res }
+            local out = vim.tbl_map(function(item)
+                if type(item) ~= 'table' then
+                    return tostring(item)
+                end
+                return item.path or item.data or vim.inspect(item)
+            end, items)
+            vim.notify(#out > 0 and table.concat(out, '\n') or ('Export ' .. cmd_display .. ' done'),
+                vim.log.levels.INFO)
         end
         return client:exec_cmd({
             title = title_str,
